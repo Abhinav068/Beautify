@@ -1,0 +1,7 @@
+https://636b3a947f47ef51e12abb5f.mockapi.io/product_data
+
+###
+https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/3
+
+###
+https://63985bc3044fa481d69a6daf.mockapi.io/Lipstic
