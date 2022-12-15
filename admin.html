@@ -6,18 +6,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <style>
+        #Login {
+            /* height: 120px; */
+        }
+
+        #logged-in {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #productDetails>div {
+            margin: 4px 0 12px;
+        }
+
+        #productDetails>div>* {
+            width: 100%;
+            height: 30px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        input {
+            box-sizing: border-box;
+
+        }
+
+        #productDetails>#action-button-div {
+            width: 40%;
+            /* border: 1px solid rgb(36, 4, 73); */
+            margin: auto;
+
+        }
+
+        #data_form {
+            border: 1px solid rgb(172, 231, 9);
+            width: fit-content;
+            padding: 20px;
+        }
+
+        #container {
+            display: flex;
+                       
+        }
+        #container>div{
+            width: 50%;
+            margin: 0 auto;
+        }
+
+
+        #success {
+            padding: 20px;
+            width: fit-content;
+            /* background-color: rgb(190, 212, 212); */
+
+        }
+        #success>div{
+            font-size: 30px;
+            border: 1px solid gray;
+            border-radius: 3px;
+            margin: 1px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+
     <div id="Login">
+        <!-- <div>
+                <h2>Welcome admin</h2>
+                <div><button>Log Out</button></div>
+            </div> -->
+
         <h2>Admin Login</h2>
-        <input type="text" placeholder="enter your id">
-        <input type="password" placeholder="enter your password">
-        <button id="login-button">Login </button>
+        <div><input type="text" id="admin-id" placeholder="enter your id"></div>
+        <div><input type="password" id="admin-pass" placeholder="enter your password"></div>
+        <div><button id="login-button">Login </button></div>
     </div>
-    <div id="welcome">
-        <h2>Add Products</h2>
-        <input type="text" placeholder="">
+    <div id="container">
+        <div id="left">
+            <div id="success">
+                <!-- later, append this to left div -->
+                <div id="add">Add Product</div>
+                <div id="update">Update Product</div>
+                <div id="delete">Delete Product</div>
+            </div>
+        </div>
+
+        <div id="right">
+            <div id="data_form">
+                <!-- <h2>Add Products</h2> -->
+                <div id="productDetails">
+                    <span>Product Name :</span>
+                    <div> <input type="text" class="u-full-width" placeholder="enter product name"></div>
+                    <span>Enter Category :</span> <!-- <input type="text" placeholder="enter product's category">-->
+                    <div><select name="cars" id="cars">
+                            <option value=''>Enter Category</option>
+                            <option value="cat1">Lipstick</option>
+                            <option value="cat2">Bosh</option>
+                            <option value="newCat">other</option>
+                        </select>
+                    </div>
+                    <span>Enter Customer Category :</span>
+                    <div> <select id="Customer_type">
+                            <option value="">Enter Customer Type</option>
+                            <option value="volvo">Male</option>
+                            <option value="saab">Female</option>
+                        </select>
+                    </div>
+                    <span>Images :</span>
+                    <div><input type="text" placeholder="enter image url"> <span style="border: none;">more</span></div>
+                    <span>Description: </span>
+                    <div><input type="text" placeholder="enter description"></div>
+                    <span>Price : </span>
+                    <div><input type="number" placeholder="enter description"></div>
+                    <span>Discount and offers: </span>
+                    <div><input type="number" placeholder="offer or discount"></div>
+                    <div id="action-button-div"><button>ADD</button></div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </body>
 <script src="admin.js"></script>
