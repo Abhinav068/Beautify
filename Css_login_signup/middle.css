@@ -24,7 +24,7 @@ form>input{
     border: none;
     border-bottom: 1px solid #F469C2;
     font-family: Copperplate, Papyrus, fantasy;
-    font-size: 20px;
+    font-size: 25px;
     
 }
 
@@ -42,4 +42,31 @@ cursor: pointer;
     background-color: #F469C2;
     cursor: pointer;
     }
+
+#loginbtn:hover{
+
+    background-color: #F469C2;
+    cursor: pointer;
+
+}
+#loginbtn{
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+}
+form{
+    display: inline;
+}
 
