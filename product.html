@@ -31,8 +31,11 @@
         /* ----------------------mid-section-------------------------- */
         #middle-product-flexible {
             background-color: rgb(246, 243, 243);
-            /* margin-top: 15vh; */
-            height: 100vh;
+
+            margin-top: 15vh;
+            /* height: 100vh; */
+
+
             padding-top: 10px;
         }
 
@@ -59,14 +62,7 @@
             flex-direction: column;
             gap: 10px;
             /* position: fixed; */
-            
-        }
 
-        #product-cards {
-            width: 70%;
-            height: 500px;
-            border: 1px solid;
-            /* background-color: #fff; */
         }
 
         #sorting-options {
@@ -77,35 +73,57 @@
             width: 100%;
             border-radius: 5px;
             border: 0px;
-            
+
         }
 
         #sorting-options:focus {
             outline: none;
         }
 
-        #sorting-options>option{
+        #sorting-options>option {
             font-weight: 100;
             font: lighter;
         }
 
-        .filter-options{
+        .filter-options {
             padding: 5%;
             font-size: large;
             width: 100%;
             border-radius: 5px;
             border: 0px;
-            transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            /* transition: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
             transition-delay: 3s;
         }
-        .filter-options:focus{
+
+        .filter-options:focus {
             outline: none;
         }
 
-        #filtering-menu{
+        #filtering-menu {
             display: flex;
             flex-direction: column;
             gap: 3px;
+        }
+
+        #product-cards {
+            width: 70%;
+            /* height: 500px; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+        }
+
+        #product-cards>div {
+            /* text-align: center; */
+            background-color: #fff;
+            padding: 3%;
+            font: caption;
+            
+        }
+
+        #product-cards img {
+            width: 100%
         }
     </style>
 </head>
@@ -138,82 +156,82 @@
                     </select>
 
                     <select class="filter-options">
-                        <option value="8">Price</option>
-                        <option value="9">Rs. 0 - Rs. 499</option>
-                        <option value="9">Rs. 500 - Rs. 999</option>
-                        <option value="9">Rs. 1000 - Rs. 1999</option>
-                        
+                        <option value="11">Price</option>
+                        <option value="12">Rs. 0 - Rs. 499</option>
+                        <option value="13">Rs. 500 - Rs. 999</option>
+                        <option value="14">Rs. 1000 - Rs. 1999</option>
+
                     </select>
                     <select class="filter-options">
-                        <option value="9">Discount</option>
-                        <option value="10">30% And Above</option>
-                        <option value="11">20% And Above</option>
-                        <option value="11">10% And Above</option>
-                        <option value="11">All Discounted Products</option>
+                        <option value="15">Discount</option>
+                        <option value="16">30% And Above</option>
+                        <option value="17">20% And Above</option>
+                        <option value="18">10% And Above</option>
+                        <option value="19">All Discounted Products</option>
                     </select>
                     <select class="filter-options">
-                        <option value="10">Rating</option>
-                        <option value="11">5 star</option>
-                        <option value="11">4 star</option>
-                        <option value="11">3 star</option>
+                        <option value="20">Rating</option>
+                        <option value="21">5 star</option>
+                        <option value="22">4 star</option>
+                        <option value="23">3 star</option>
                     </select>
                     <select class="filter-options" id="color-filter">
-                        <option value="11">Color</option>
-                        <option value="11">Pink</option>
-                        <option value="11">Red</option>
-                        <option value="11">Purple</option>
-                        <option value="11">Blue</option>
-                        <option value="11">Green</option>
-                        <option value="11">Yellow</option>
-                        <option value="11">Maroon</option>
-                        <option value="11">Black</option>
-                        <option value="11">Brown</option>
-                        <option value="11">Orange</option>
-                        <option value="11">Coral</option>
-                        <option value="11">Multi-color</option>
-                        <option value="11">White</option>
-                        <option value="11">Transparent</option>
-                        <option value="11">Peach</option>
-                        <option value="11">Gold</option>
-                        <option value="11">Silver</option>
-                        <option value="11">Grey</option>
-                        <option value="11">Beige</option>
-                        <option value="11">Lavender</option>
-                        <option value="11">Rust</option>
-                        <option value="11">Cyan</option>
+                        <option value="24">Color</option>
+                        <option value="25">Pink</option>
+                        <option value="26">Red</option>
+                        <option value="27">Purple</option>
+                        <option value="28">Blue</option>
+                        <option value="29">Green</option>
+                        <option value="30">Yellow</option>
+                        <option value="31">Maroon</option>
+                        <option value="32">Black</option>
+                        <option value="33">Brown</option>
+                        <option value="34">Orange</option>
+                        <option value="35">Coral</option>
+                        <option value="36">Multi-color</option>
+                        <option value="37">White</option>
+                        <option value="38">Transparent</option>
+                        <option value="39">Peach</option>
+                        <option value="40">Gold</option>
+                        <option value="41">Silver</option>
+                        <option value="42">Grey</option>
+                        <option value="43">Beige</option>
+                        <option value="44">Lavender</option>
+                        <option value="45">Rust</option>
+                        <option value="46">Cyan</option>
                     </select>
                     <select class="filter-options">
-                        <option value="7">Gender</option>
-                        <option value="8">Women</option>
-                        <option value="9">Men</option>
+                        <option value="47">Gender</option>
+                        <option value="48">Women</option>
+                        <option value="49">Men</option>
                     </select>
                     <select class="filter-options">
-                        <option value="7">Formulation</option>
-                        <option value="8">Liquid</option>
-                        <option value="9">Pencil</option>
-                        <option value="10">Pressed Powder</option>
-                        <option value="11">Cream</option>
-                        <option value="11">Stick</option>
-                        <option value="11">Kajal</option>
-                        <option value="11">Crayon</option>
-                        <option value="11">Spray</option>
-                        <option value="11">Wipes</option>
-                        <option value="11">Powder</option>
-                        <option value="11">Mousse</option>
-                        <option value="11">Loose Powder</option>
-                        <option value="11">Gel</option>
-                        <option value="11">Lotion/Body Butter</option>
-                        <option value="11">Pen</option>
-                        <option value="11">Serum</option>
-                        <option value="11">Oil</option>
-                        <option value="11">Balm</option>
+                        <option value="50">Formulation</option>
+                        <option value="51">Liquid</option>
+                        <option value="52">Pencil</option>
+                        <option value="53">Pressed Powder</option>
+                        <option value="54">Cream</option>
+                        <option value="55">Stick</option>
+                        <option value="56">Kajal</option>
+                        <option value="57">Crayon</option>
+                        <option value="58">Spray</option>
+                        <option value="59">Wipes</option>
+                        <option value="60">Powder</option>
+                        <option value="61">Mousse</option>
+                        <option value="62">Loose Powder</option>
+                        <option value="63">Gel</option>
+                        <option value="64">Lotion/Body Butter</option>
+                        <option value="65">Pen</option>
+                        <option value="66">Serum</option>
+                        <option value="67">Oil</option>
+                        <option value="68">Balm</option>
                     </select>
                     <select class="filter-options">
-                        <option value="7">Preference</option>
-                        <option value="8">Waterproof</option>
-                        <option value="9">Vitamin E</option>
-                        <option value="10">Paraben Free</option>
-                        <option value="11">Cruelty-Free</option>
+                        <option value="69">Preference</option>
+                        <option value="70">Waterproof</option>
+                        <option value="71">Vitamin E</option>
+                        <option value="72">Paraben Free</option>
+                        <option value="73">Cruelty-Free</option>
                         <!-- <input type="checkbox" id="checkbox"> <label for="checkbox">raj</label> -->
                     </select>
                 </div>
