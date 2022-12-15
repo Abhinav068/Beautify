@@ -1,4 +1,5 @@
 
+
 let Product_url = "https://636b3a947f47ef51e12abb5f.mockapi.io/product_data";
 
 let fetchData = fetch(Product_url);
@@ -33,3 +34,4 @@ function renderData(data){
     }
   
 }
+

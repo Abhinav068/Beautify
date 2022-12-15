@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#register,#login{   
+    border: 1px solid white;
+    width: 25%;
+  
+    margin: auto;
+    text-align: center;  
+    margin-top: 10%;
+    padding-bottom: 2%;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+form>input{
+   
+  
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 20px;
+    
+}
+
+h1{
+    padding: 5%;
+    font-family: Copperplate, Papyrus, fantasy;
+    
+}
+#loginto:hover{
+background-color: #F469C2;
+cursor: pointer;
+}
+
+#signin:hover{
+    background-color: #F469C2;
+    cursor: pointer;
+    }
+
