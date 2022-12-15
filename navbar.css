@@ -24,6 +24,7 @@ nav{
 
 #beauty{
     animation: slide 3s infinite;
+    margin: auto;
 }
 @keyframes slide{
     0%{transform: translateY(10px);opacity: 1;}   
@@ -50,7 +51,7 @@ nav{
 }
 
 #signin{
-    background-color: rgb(239, 9, 120);
+    background-color: #FC2779;
     border: none;
     padding:10px 15px 10px 15px;
     border-radius: 5px;
@@ -71,6 +72,9 @@ nav{
 .drop_Makeup ul li a{
     text-decoration: none;
     color:gray;
+}
+.drop_Makeup ul li a:hover{
+    cursor: pointer;
 }
 .drop_Makeup{
     position: static;
