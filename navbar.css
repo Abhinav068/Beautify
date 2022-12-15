@@ -12,11 +12,14 @@ body{
     background-image: url(/top_nav_banner.png);
 }
 nav{
-    position: sticky;
+    position: fixed;
     background-color: white;
     z-index: 4;
     width: 100%;
     top: 0px;
+}
+#body{
+    margin-top:10%;
 }
 
 #beauty{
