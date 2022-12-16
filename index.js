@@ -1,6 +1,10 @@
 let prev = document.getElementById("previous");
 let next = document.getElementById("next");
-
+import { dropmenu, navbar } from "./exoportNavBar.js";
+import { footer } from "./footer.js";
+document.querySelector("nav").innerHTML = navbar()
+document.getElementById("drop").innerHTML = dropmenu()
+document.getElementById("bottom-footer").innerHTML = footer()
 let arr = [
   "https://images-static.nykaa.com/uploads/b5e477cd-478c-4f1d-b1a5-c2030c3d0615.jpg?tr=w-1200,cm-pad_resize",
   "https://images-static.nykaa.com/uploads/fe616105-d856-4ef7-9a91-22a68a988094.png?tr=w-1200,cm-pad_resize",
@@ -35,3 +39,21 @@ function slides() {
   else i = 0;
 }
 setInterval(slides, 1500);
+
+document.querySelector("#signin").addEventListener("click",function log(){
+  window.location.href = "login.html"
+})
+
+let categories = document.querySelectorAll("a")
+for(let item of categories){
+  item.addEventListener("click",()=>{
+      localStorage.setItem("category",item.innerText)
+      window.location.href = "category.html"
+  })
+}
+let all_images = document.getElementsByTagName("img")
+for(let image of all_images){
+  image.addEventListener("click",()=>{
+    window.location.href = "product.html"
+  })
+}

@@ -8,7 +8,7 @@ form.addEventListener("submit",(event)=>{
     obj[inputlogin[1].id]=inputlogin[1].value;
 
     if (obj.email==""|| obj.password=="") {
-        alert("Please fill all the Details")
+        swal("Please fill all the Details")
         event.preventDefault();
     } else {
         login(obj)
@@ -16,6 +16,19 @@ form.addEventListener("submit",(event)=>{
    
 
 })
+
+function myFunction(){
+    let pass= document.querySelector("#password")
+    let show=document.querySelector("#showpass")
+   
+    if(pass.type==='password'){
+        pass.type='text'
+    }else{
+        pass.type='password'
+    }
+
+    
+}
 
 async function login(obj) {
     try {
@@ -28,19 +41,37 @@ async function login(obj) {
         })
         if (getdat.ok) {
             let data = await getdat.json()
-            let flag = "No"
+            let flag = "no"
+            let flag1= "yes"
+            let flag2='yes'
             data.forEach(element => {
-
-                console.log(element.email,element.password)
-                if (element.email != obj.email ) {
-                    flag = "no"
+                 if(element.email == obj.email && element.password ==obj.password){
+                    flag= "yes"
+                }else if(element.email == obj.email && element.password !=obj.password){
+                    flag1= "no"
+                }else if(element.email != obj.email && element.password ==obj.password){
+                    flag1= "no"
                 }
             });
-            // if (flag == "yes") {
-            //     alert("login successfully")
-            // }else{
-            //     alert("Wrong Credential")
-            // }
+            if (flag == "yes") {
+                swal({
+                    title: "Congratulation!",
+                    text: "Login successfully!",
+                    icon: "success",
+                    button: "ok",
+                  }).then(function() {
+                    window.location.href="login.html"
+                });
+
+                
+
+            }else if(flag1=='no'){
+                swal("Wrong password")
+            }else if(flag2=="no"){
+                swal("Wrong email")
+            }else{
+                swal("Wrong credential")
+            }
 
         }
     } catch (error) {

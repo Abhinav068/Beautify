@@ -155,11 +155,14 @@ body {
     font-size: 30px;
     width: 20%;
  }
+ .heart:hover{
+    color: #FC2779;
+ }
  .add{
     background-color: #FC2779;
     width: 80%;
     padding: 10px;
-   
+    color: white;
  }
  .slide{
     cursor: pointer;
@@ -173,3 +176,38 @@ body {
  #signin:hover{
     cursor: pointer;
  }
+ body::-webkit-scrollbar {
+    width: 1em;
+}
+ body::-webkit-scrollbar-thumb {
+    background-color: rgb(254, 146, 187);
+}
+/* -------------------------------------------------------------Responsive------------------------------------------------------------- */
+@media screen and (max-width:1080px){
+    #product-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    #cards-functionality-buttons {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width: 50%;
+        height: 100px;
+    }
+    #cards-functionality-buttons {
+        position: sticky;
+        top :5%
+    
+    }
+    .cart_product img{
+        width: 250px;
+        height: 200px;
+    }
+    .cart_product{
+        width: 100%;
+        height: 450px;
+    }
+    .cart_product p{
+        line-height: 15px;
+    }
+}
