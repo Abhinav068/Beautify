@@ -121,3 +121,6 @@ nav{
 .drop_Makeup>ul>li:hover .sub_menu ul:nth-child(2n){
     background-color: #f4f4f4;;
 }
+#signin:hover{
+    cursor: pointer;
+}
