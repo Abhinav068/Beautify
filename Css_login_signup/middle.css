@@ -59,6 +59,9 @@ cursor: pointer;
     font-family: Copperplate, Papyrus, fantasy;
     font-size: 25px;
 }
+#signin{
+    margin-bottom: 2%;
+}
 
 a{
     text-decoration: none;
@@ -69,4 +72,20 @@ a{
 form{
     display: inline;
 }
+
+#acc{
+    text-decoration: underline;
+    color: black;
+    display: block;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 18px;
+    margin-top: 2%;
+
+}
+
+#show{
+    display: inline;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
 
