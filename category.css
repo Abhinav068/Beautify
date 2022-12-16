@@ -155,6 +155,9 @@ body {
     font-size: 30px;
     width: 20%;
  }
+ .heart:hover{
+    color: #FC2779;
+ }
  .add{
     background-color: #FC2779;
     width: 80%;
