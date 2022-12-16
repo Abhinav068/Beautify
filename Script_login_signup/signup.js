@@ -1,15 +1,25 @@
 //selecting tag from html
+
+// const { default: swal } = require("sweetalert");
+
+let btm=document.querySelector("#bt")
+
 let form = document.querySelector("#register form");
+let gender = document.querySelectorAll(".gender")
+
+console.log(gender[0].checked,gender[1].checked)
+
 
 //adding eventlistner to register button
 form.addEventListener("submit", (event) => {
-
+    event.preventDefault();
     let obj = {}
     let allinput = document.querySelectorAll("form input")
-    let gender = document.querySelectorAll(".gender")
+    
+    
     for (let i = 0; i < gender.length; i++) {
         if (gender[i].checked == true && gender[i + 1].checked == true) {
-            alert("sorry you cant select both gender at time")
+            swal("you cant select more than one gender at a time")
             event.preventDefault()
         } else if (gender[i].checked == true) {
             obj.gender = gender[i].value
@@ -20,10 +30,10 @@ form.addEventListener("submit", (event) => {
     }
 
     if (Object.keys(obj).length < 5) {
-        alert("Please fill all the boxes")
+        swal("Please fill all the details")
         event.preventDefault();
     } else if (obj.email == "" || obj.firstname == "" || obj.lastname == "" || obj.password == "") {
-        alert("Please fill all the boxes")
+        swal("Please fill all the details")
         event.preventDefault();
     } else {
         getdata(obj)
@@ -53,7 +63,7 @@ async function getdata(obj) {
             if (flag == "yes") {
                 register(obj)
             }else{
-                alert("user already registerd")
+                swal("user is already registerd");
             }
 
         }
@@ -78,8 +88,23 @@ async function register(obj) {
         if (!userdata.ok) {
             alert("something went wrong")
         }else{
-            alert("congratulation")
-            window.location.href="login.html"
+            let data= await userdata.json()
+
+            localStorage.setItem('userdata',JSON.stringify(data))
+            // sessionStorage.setItem('value',0)
+
+            swal({
+                title: "Congratulation!",
+                text: "Account created successfully!",
+                icon: "success",
+                button: "ok",
+
+               
+              }).then(function() {
+                window.location.href="login.html"
+            });
+            
+            
         }
        
     } catch (error) {

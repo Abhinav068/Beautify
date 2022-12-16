@@ -51,3 +51,9 @@ for(let item of categories){
       window.location.href = "category.html"
   })
 }
+let all_images = document.getElementsByTagName("img")
+for(let image of all_images){
+  image.addEventListener("click",()=>{
+    window.location.href = "product.html"
+  })
+}
