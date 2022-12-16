@@ -47,9 +47,10 @@
 
         #container {
             display: flex;
-                       
+
         }
-        #container>div{
+
+        #container>div {
             width: 50%;
             margin: 0 auto;
         }
@@ -58,11 +59,14 @@
         #success {
             padding: 20px;
             width: fit-content;
+            display: flex;
+            justify-content: space-between;
             /* background-color: rgb(190, 212, 212); */
 
         }
-        #success>div{
-            font-size: 30px;
+
+        #success>div {
+            font-size: 20px;
             border: 1px solid gray;
             border-radius: 3px;
             margin: 1px;
@@ -70,4 +74,67 @@
             cursor: pointer;
         }
     </style>
+
+
+<body>
+
+    <div id="Login">
+        <!-- <div>
+                <h2>Welcome admin</h2>
+                <div><button>Log Out</button></div>
+            </div> -->
+
+        <h2>Admin Login</h2>
+        <div><input type="text" id="admin-id" placeholder="enter your id" value="abhinav"></div>
+        <div><input type="password" id="admin-pass" placeholder="enter your password" value="admin"></div>
+        <div><button id="login-button">Login </button></div>
+    </div>
+    <div id="container">
+        <div id="left">
+            <div id="success">
+                <!-- Later, append this to left div -->
+                <!-- <div id="add" class='work' data-id=1>Add</div>
+                <div id="update" class='work' data-id=2>Update </div>
+                <div id="delete" class='work' data-id=3>Delete </div>-->
+            </div> 
+            <div id="form_div"></div>
+        </div>
+
+        <div id="right">
+            <div id="data_form">
+                <h2>Delete Product</h2>
+                <div id="productDetails">
+                    <span>Product id :</span>
+                    <div> <input type="number" placeholder="enter product id"></div>
+                    <span>Enter Category :</span>
+                    <div><select name="cars" id="cars">
+                            <option value=''>Enter Category</option>
+                            <option value="cat1">Lipstick</option>
+                            <option value="cat2">Bosh</option>
+                            <option value="newCat">other</option>
+                        </select>
+                    </div>
+                    <span>Enter Customer Category :</span>
+                    <div> <select id="Customer_type">
+                            <option value="">Enter Customer Type</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <span>Images :</span>
+                    <div><textarea placeholder="enter image url on new line" rows="15" cols="30"></textarea>
+                        <!-- <span style="border: none;">more</span> --></div>
+                    <span>Description: </span>
+                    <div><textarea placeholder="enter description" rows="15" cols="30"></textarea></div>
+                    <span>Price : </span>
+                    <div><input type="number" placeholder="enter price"></div>
+                    <span>Discount and offers: </span>
+                    <div><input type="number" placeholder="offer or discount"></div>
+                    <div id="action-button-div"><button>Submit</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="admin.js"></script>
 
