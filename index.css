@@ -6,7 +6,7 @@
   padding: 0;
   scroll-behavior: smooth;
   text-align: center;
-  width: 95%;
+  width: 85%;
   margin: auto;
 }
 #middle h1 {
@@ -336,6 +336,7 @@
   margin-top: 20px;
   background-color: rgb(195, 247, 247);
   margin-bottom: 20px;
+  padding: 10px;
 }
 body::-webkit-scrollbar {
   width: 1em;
