@@ -42,12 +42,24 @@ function back() {
         i = images.length-1;
       }
     };
+    let cat = localStorage.getItem("category") || "null"
+    window.addEventListener("load",()=>{
+      if(cat.toLowerCase() == "blush" || cat.toLowerCase() == "bronzer" || cat.toLowerCase() == "lipstic" ){
+        showData(cat)
+      }
+      else{
+        fetch("https://636b3a947f47ef51e12abb5f.mockapi.io/product_data")
+        .then((res)=>res.json())
+        .then(data=>{render(data)})
+      }
 
+    })
     let categories = document.querySelectorAll("a")
     for(let item of categories){
       item.addEventListener("click",()=>{
           if(item.innerText.toLowerCase() == "blush" || item.innerText.toLowerCase() == "bronzer" || item.innerText.toLowerCase() == "lipstic" ){
-              showData(item.innerText)
+            localStorage.setItem("category",item.innerText)  
+            showData(item.innerText)
           }
          else{
           fetch("https://636b3a947f47ef51e12abb5f.mockapi.io/product_data")
@@ -58,21 +70,51 @@ function back() {
     }
     function render(data){
       let newData = data.map((item)=>{
-          return `  <div class = "cart_product">
+          return `  <div class = "cart_product" data-id= ${item.id}>
               <p style="color: #FC2779">FEATURED</p>
-              <img src="${item.image[0]}" alt=""height="250">
+              <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
               <p style="text-align:center">${item.name}</p>
               <p style="text-align:center">₹${item.price}</p>
               <p style="text-align:center">${item.rating}</p>
-              <div class="addToCart">
+              <div class="addToCart" data-id= ${item.id}>
                   <p class="heart">&#9825</p>
-                  <p class="add">Add To Cart</p>
+                  <p class="add" data-id = ${item.id}>Add To Bag</p>
               </div>
           </div>
               `
       })
       document.getElementById("product-cards").innerHTML = newData.join(" ")
+      //For rendering image and description of product------------------------------------------------------
+      let products = document.querySelectorAll(".info")
+      for(let product of products){
+        product.addEventListener("click",()=>{
+          let id = product.dataset.id
+          localStorage.setItem("product_id",id)
+          window.location.href = "#"   //add images link
+        })
+      }
+      //----------------------------------------------------------------------------------------------------------
+
+       //add to bag ----------------------------------------------------------------------------------------------
+       let cart_items = document.querySelectorAll(".add")
+       for(let item of cart_items){
+           item.addEventListener("click",()=>{
+           let id = item.dataset.id
+           if(item.innerText == "Added To Bag"){
+             item.innerText = "Add To Bag"
+             item.style.backgroundColor = "#FC2779";
+             }
+             else{
+               item.innerText = "Added To Bag"
+               item.style.backgroundColor = "brown";
+             }
+             
+         })
+       }
+
+   //--------------------------------------------------------------------------------------------------------
     }
+    
     async function showData(category){
       try {
           let data = await fetch("https://636b3a947f47ef51e12abb5f.mockapi.io/product_data")
@@ -81,22 +123,50 @@ function back() {
               return (item.category.toLowerCase() == category.toLowerCase())
           })
           let renderData = newArray.map((item)=>{
-              return `  <div class = "cart_product">
+              return `  <div class = "cart_product" data-id= ${item.id}>
               <p style="color: #FC2779">FEATURED</p>
-              <img src="${item.image[0]}" alt=""height="250">
+              <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
               <p style="text-align:center">${item.name}</p>
               <p style="text-align:center">₹${item.price}</p>
               <p style="text-align:center">${item.rating}</p>
-              <div class="addToCart">
+              <div class="addToCart" data-id= ${item.id}>
                   <p class="heart">&#9825</p>
-                  <p class="add">Add To Bag</p>
+                  <p class="add" data-id= ${item.id}>Add To Bag</p>
               </div>
           </div>
               `
           })
-         
           document.getElementById("product-cards").innerHTML = renderData.join(" ")
-         
+         //For rendering image and description of product------------------------------------------------------
+          let products = document.querySelectorAll(".info")
+          for(let product of products){
+            product.addEventListener("click",()=>{
+              let id = product.dataset.id
+              localStorage.setItem("product_id",id)
+              window.location.href = "#"   //add images link
+            })
+          }
+         //----------------------------------------------------------------------------------------------------------
+
+          //add to bag ----------------------------------------------------------------------------------------------
+              let cart_items = document.querySelectorAll(".add")
+              for(let item of cart_items){
+                  item.addEventListener("click",()=>{
+                  let id = item.dataset.id
+                  if(item.innerText == "Added To Bag"){
+                    item.innerText = "Add To Bag"
+                    item.style.backgroundColor = "#FC2779";
+                    }
+                    else{
+                      item.innerText = "Added To Bag"
+                      item.style.backgroundColor = "brown";
+                    }
+                    
+                })
+              }
+
+    //--------------------------------------------------------------------------------------------------------
+
       } catch (error) {
           alert(error)
       }

@@ -1,17 +1,15 @@
-* {
+#middle {
   overflow-x: hidden;
   font-family: "Abel", sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-}
-#middle{
   text-align: center;
   width: 95%;
   margin: auto;
 }
-h1 {
+#middle h1 {
   background-image: linear-gradient(rgb(242, 127, 127),pink);
   font-size: 25px;
   margin-right: 80%;
@@ -20,7 +18,7 @@ h1 {
  
 }
 
-p {
+#middle p {
   color: grey;
   font-size: 18px;
   margin-top: 5px;
@@ -316,10 +314,7 @@ p {
   margin-top: 10px;
   cursor: pointer;
   margin-bottom: 10px;
-  
- 
-
-  
+    
 }
 .card4:hover {
   
@@ -336,6 +331,15 @@ p {
   width: 100%;
 }
 #container-blue{
+  width: 100%;
+  border-radius: 10px;
   margin-top: 20px;
   background-color: rgb(195, 247, 247);
+  margin-bottom: 20px;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(254, 146, 187);
 }

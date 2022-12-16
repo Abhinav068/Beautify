@@ -159,7 +159,7 @@ body {
     background-color: #FC2779;
     width: 80%;
     padding: 10px;
-   
+    color: white;
  }
  .slide{
     cursor: pointer;
@@ -173,3 +173,9 @@ body {
  #signin:hover{
     cursor: pointer;
  }
+ body::-webkit-scrollbar {
+    width: 1em;
+}
+ body::-webkit-scrollbar-thumb {
+    background-color: rgb(254, 146, 187);
+}
