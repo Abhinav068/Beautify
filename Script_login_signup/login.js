@@ -8,7 +8,7 @@ form.addEventListener("submit",(event)=>{
     obj[inputlogin[1].id]=inputlogin[1].value;
 
     if (obj.email==""|| obj.password=="") {
-        alert("Please fill all the Details")
+        swal("Please fill all the Details")
         event.preventDefault();
     } else {
         login(obj)
@@ -54,13 +54,23 @@ async function login(obj) {
                 }
             });
             if (flag == "yes") {
-                alert("login successfully")
+                swal({
+                    title: "Congratulation!",
+                    text: "Login successfully!",
+                    icon: "success",
+                    button: "ok",
+                  }).then(function() {
+                    window.location.href="login.html"
+                });
+
+                
+
             }else if(flag1=='no'){
-                alert("Wrong password")
+                swal("Wrong password")
             }else if(flag2=="no"){
-                alert("Wrong email")
+                swal("Wrong email")
             }else{
-                alert("Wrong credential")
+                swal("Wrong credential")
             }
 
         }
