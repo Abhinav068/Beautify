@@ -25,6 +25,9 @@ body{
     color: white;
     padding: 30px;
 }
+.sec2>div img{
+    border-radius: 5px;
+}
 .sec2 a{
     text-decoration: none;
     line-height: 10px;
