@@ -1,8 +1,8 @@
 
-DELETE  https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/61
+DELETE  https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/
 
 ###
-PUT https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/61
+GET https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/3
 Content-Type: application/json
 
 {
