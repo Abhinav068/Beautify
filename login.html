@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css_login_signup\middle.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -15,13 +16,16 @@
 
         <form action="">
 
-            <input type="email" name="" id="Username" placeholder="write your email here"  > <br>
-            <input type="password" name="" id="Password" placeholder="wirte your password" autocomplete="on" ><br>
-            <input type="submit" name="" id="loginto" value="login">
-
+            <input type="email" name="" id="email" placeholder="write your email here"  > <br>
+            <input type="password" name="" id="password" placeholder="wirte your password" autocomplete="on" ><br>
+            <input type="checkbox" id="showpass" onclick="myFunction()" value=""><p id="show">Show Password</p>  <br>
+            <input type="submit" name="" id="loginto" value=" login ">  
+            
         </form>
+        <button  id="loginbtn"><a href="sigup.html">signup</a> </button>
+        <br><a id="acc" href="">➡&nbsp;&nbsp;forget password ?</a>
 
-        <img height="170px" src="images\clean-set-social-media-logos_1017-14121.webp" alt="">
+        <img height="100px" src="images\clean-set-social-media-logos_1017-14121.webp" alt="">
         
 
 

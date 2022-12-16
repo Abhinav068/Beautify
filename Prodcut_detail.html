@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Product Detail</title>
+    <style>
+        body {
+            border: 1px solid;
+            margin: auto;
+            overflow-x: hidden;
+        }
+
+        body::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: rgb(254, 146, 187);
+        }
+
+        #middle-section{
+            width: 100%;
+            background-color: rgb(246, 243, 243);
+            height: 500px;
+        }
+
+        #middle-card{
+            width: 90%;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            padding-top: 50px;
+            gap: .1%;
+        }
+        #middle-card>#card1{
+            width: 30%;
+            border: 1px solid;
+            height: 400px;
+        }
+        #middle-card>#card2{
+            width: 70%;
+            /* border: 1px solid; */
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        #middle-card>#card2>#card2-top{
+            width: 100%;
+            border: 1px solid;
+            height: 350px;
+        }
+        #middle-card>#card2>#card2-bottom{
+            width: 100%;
+            /* border: 1px solid; */
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        #middle-card>#card2>#card2-bottom>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: large;
+        }
+        #card2-bottom img {
+            width: 5%;
+            border-radius: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav></nav>
+    <section id="body">
+        <section id="drop"></section>
+        <section id="middle-section">
+            <div id="middle-card">
+                <div id="card1"></div>
+                <div id="card2">
+                    <div id="card2-top"></div>
+                    <div id="card2-bottom">
+                        <div>
+                            <img src="./logo/BEAUTYFY-logo-img.png" alt="logo">
+                            100% Genuine Product
+                        </div>
+                        <div>
+                            <img src="./logo/retrurn-logo.png" alt="Return">
+                            Easy Return Policy
+                        </div>
+                        <div>
+                            Sold By NYKAA E-Retailer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bottom-footer">
+        </section>
+    </section>
+   
+
+    <script src="./Product_detail.js" type="module"></script>
+</body>
+
+</html>

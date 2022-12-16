@@ -1,27 +1,30 @@
-* {
+#middle {
   overflow-x: hidden;
   font-family: "Abel", sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+
 }
 
 #middle {
+
   text-align: center;
-  width: 95%;
+  width: 85%;
   margin: auto;
 }
-h1 {
-  /* background-image: linear-gradient(rgb(242, 127, 127),pink); */
-  background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4);
+
+#middle h1 {
+  background-image: linear-gradient(rgb(242, 127, 127),pink);
+
   font-size: 25px;
   margin-right: 80%;
   margin-top: 10px;
   color: rgb(246, 10, 50);
 }
 
-p {
+#middle p {
   color: grey;
   font-size: 18px;
   margin-top: 5px;
@@ -306,6 +309,7 @@ p {
   margin-top: 10px;
   cursor: pointer;
   margin-bottom: 10px;
+
 }
 .card4:hover {
   color: white;
@@ -319,9 +323,20 @@ p {
 .image10 img {
   width: 100%;
 }
-#container-blue {
+
+#container-blue{
+  width: 100%;
+  border-radius: 10px;
   margin-top: 20px;
   background-color: rgb(195, 247, 247);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(254, 146, 187);
 }
 .container-blue3 {
   display: grid;

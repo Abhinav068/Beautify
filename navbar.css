@@ -121,3 +121,26 @@ nav{
 .drop_Makeup>ul>li:hover .sub_menu ul:nth-child(2n){
     background-color: #f4f4f4;;
 }
+#signin:hover{
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------Responsive------------------------------------------------------------- */
+@media screen and (max-width:1080px){
+    #head{
+       display: none;
+    }
+    .category{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    #body{
+        margin-top: 1%;
+    }
+    nav{
+        position: static;
+    }
+    .drop_Makeup>ul>li:hover .sub_menu{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
