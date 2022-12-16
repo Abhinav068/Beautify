@@ -1,11 +1,16 @@
 import { dropmenu, navbar } from "./exoportNavBar.js";
 import { footer } from "./footer.js";
-document.querySelector("nav").innerHTML = navbar()
-document.getElementById("drop").innerHTML = dropmenu()
-document.getElementById("bottom-footer").innerHTML = footer()
+
+document.querySelector("nav").innerHTML = navbar();
+document.getElementById("drop").innerHTML = dropmenu();
+document.getElementById("bottom-footer").innerHTML = footer();
+
+
+
 let totalProducts
 let category_product 
 let flag = false
+
 
 let Product_url = "https://636b3a947f47ef51e12abb5f.mockapi.io/product_data";
 
@@ -13,38 +18,52 @@ let fetchData = fetch(Product_url);
 
 fetchData
     .then((res) => res.json())
+
+    
+
+
     .then(data => {
       totalProducts  = data
       renderData(data)}
       )
 // .catch(err=>alert(err));
+
 function renderData(data){
     let newData = data.map((item)=>{
         return `  <div class = "cart_product" data-id= ${item.id}>
             <p style="color: #FC2779">FEATURED</p>
             <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
-            <p style="text-align:center">${item.name}</p>
-            <p style="text-align:center">₹${item.price}</p>
-            <p style="text-align:center">${item.rating}</p>
+            <p class="title_click"; style="text-align:center";>${item.name}</p>
+            <p style="text-align:center">Price : ₹${item.price}</p>
+            <p style="text-align:center">Rating : ${item.rating}</p>
             <div class="addToCart" data-id= ${item.id}>
                 <p class="heart">&#9825</p>
                 <p class="add" data-id= ${item.id}>Add To Bag</p>
             </div>
-        </div>
-            `
+        </div>`     
     })
-    document.getElementById("product-cards").innerHTML = newData.join(" ")
+    document.getElementById("product-cards").innerHTML = newData.join(" ");
+
+    
+let x = document.querySelectorAll(".title_click");
+
+for (const item of x) {
+    item.addEventListener("click",()=>{
+        window.location.href = "Prodcut_detail.html";
+    })
+}
+
     //For rendering image and description of product------------------------------------------------------
     let products = document.querySelectorAll(".info")
     for(let product of products){
       product.addEventListener("click",()=>{
         let id = product.dataset.id
         localStorage.setItem("product_id",id)
-        window.location.href = "#"   //add images link
+        window.location.href = "Prodcut_detail.html";
       })
     }
-    //----------------------------------------------------------------------------------------------------------
-     //add to bag ----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------
+     //add to bag ----------------------------------------------------------------------------------------
      let cart_items = document.querySelectorAll(".add")
      for(let item of cart_items){
         item.addEventListener("click",()=>{
@@ -122,7 +141,7 @@ function renderData(data){
             product.addEventListener("click",()=>{
               let id = product.dataset.id
               localStorage.setItem("product_id",id)
-              window.location.href = "#"   //add images link
+              window.location.href = "Prodcut_detail.html"   //add images link
             })
           }
     //----------------------------------------------------------------------------------------------------------
@@ -323,5 +342,3 @@ function sortArray(value,data){
 //     }
 
 // }
-
-
