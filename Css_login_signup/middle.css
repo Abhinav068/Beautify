@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#register,#login{   
+    border: 1px solid white;
+    width: 25%;
+  
+    margin: auto;
+    text-align: center;  
+    margin-top: 10%;
+    padding-bottom: 2%;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+form>input{
+   
+  
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+    
+}
+
+h1{
+    padding: 5%;
+    font-family: Copperplate, Papyrus, fantasy;
+    
+}
+#loginto:hover{
+background-color: #F469C2;
+cursor: pointer;
+}
+
+#signin:hover{
+    background-color: #F469C2;
+    cursor: pointer;
+    }
+
+#loginbtn:hover{
+
+    background-color: #F469C2;
+    cursor: pointer;
+
+}
+#loginbtn{
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+}
+#signin{
+    margin-bottom: 2%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+}
+form{
+    display: inline;
+}
+
+#acc{
+    text-decoration: underline;
+    color: black;
+    display: block;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 18px;
+    margin-top: 2%;
+
+}
+
+#show{
+    display: inline;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+@media all and (min-width: 600px) and (max-width: 1024){
+
+
+
+    #register,#login{   
+    border: 1px solid white;
+    width: 25%;
+  
+    margin: auto;
+    text-align: center;  
+    margin-top: 10%;
+    padding-bottom: 2%;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+form>input{
+   
+  
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+    
+}
+
+h1{
+    padding: 5%;
+    font-family: Copperplate, Papyrus, fantasy;
+    
+}
+#loginto:hover{
+background-color: #F469C2;
+cursor: pointer;
+}
+
+#signin:hover{
+    background-color: #F469C2;
+    cursor: pointer;
+    }
+
+#loginbtn:hover{
+
+    background-color: #F469C2;
+    cursor: pointer;
+
+}
+#loginbtn{
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+}
+#signin{
+    margin-bottom: 2%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 5px;
+}
+form{
+    display: inline;
+}
+
+#acc{
+    text-decoration: underline;
+    color: black;
+    display: block;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 1px;
+    margin-top: 2%;
+
+}
+
+#show{
+    display: inline;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+}
+
+@media all and (min-width: 100px) and (max-width: 599){
+    
+}

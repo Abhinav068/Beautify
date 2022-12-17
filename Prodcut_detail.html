@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Product Detail</title>
+    <style>
+        body {
+            /* border: 1px solid red; */
+            margin: auto;
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: rgb(254, 146, 187);
+        }
+
+        #middle-section {
+            width: 100%;
+            background-color: rgb(246, 243, 243);
+            /* height: 500px; */
+        }
+
+        #middle-card {
+            width: 80%;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            padding-top: 50px;
+            gap: 1%;
+            padding-bottom: 20px;
+        }
+
+        #middle-card>#card1 {
+            width: 80%;
+        }
+        #middle-card>#card1>div {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 15px;
+            background-color: #fff;
+            padding: 3px;
+
+        }
+        #middle-card>#card1>div img{
+            width: 190px;
+            border: 2px solid gold;
+        }
+
+        #middle-card>#card2 {
+            /* width: 65%; */
+            /* border: 1px solid; */
+            /* height: 400px; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        #middle-card>#card2>#card2-top {
+            width: 100%;
+            /* border: 1px solid; */
+            /* height: 350px; */
+            background-color: #fff;
+            padding: 20px;
+            /* color: teal; */
+        }
+        #middle-card>#card2>#card2-top h2 {
+            color:rgb(239 9 120) ;
+        }
+        #middle-card>#card2>#card2-top h3 {
+            color: teal;
+        }
+        #middle-card>#card2>#card2-top h4 {
+            color: gray;
+        }
+
+        #middle-card>#card2>#card2-bottom {
+            width: 100%;
+            /* border: 1px solid; */
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        #middle-card>#card2>#card2-bottom>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: large;
+        }
+
+        #card2-bottom img {
+            width: 5%;
+            border-radius: 60%;
+            border: 1px solid silver;
+        }
+
+        #Back {
+            padding: 5px 20px;
+            font-size: medium;
+            margin: 10px;
+            background-color: rgb(239 9 120);
+            border: none;
+            color: white;
+            border-radius: 8px;
+            position: fixed;
+        }
+        #Back:hover {
+            background-color: rgb(249, 69, 156);
+        }
+        #button_box{
+            display: flex;
+            gap: 3%;
+        }
+        #button_box > button{
+            padding: 1% 2%;
+            color: white;
+            background-color: rgb(239 9 120);
+            border: none;
+            border-radius: 5px;
+        }
+        #button_box > button:hover{
+            background-color: rgb(249, 69, 156);
+        }
+    </style>
+</head>
+
+<body>
+    <nav></nav>
+    <section id="body">
+        <section id="drop"></section>
+        <section id="middle-section">
+            <button id="Back">Back</button>
+            <div id="middle-card">
+                <div id="card1"></div>
+                <div id="card2">
+                    <div id="card2-top"></div>
+                    <div id="card2-bottom">
+                        <div>
+                            <img src="./logo/BEAUTYFY-logo-img.png" alt="logo">
+                            100% Genuine Product
+                        </div>
+                        <div>
+                            <img src="./logo/retrurn-logo.png" alt="Return">
+                            Easy Return Policy
+                        </div>
+                        <div>
+                            Sold By NYKAA E-Retailer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bottom-footer">
+        </section>
+    </section>
+
+    <script src="./Product_detail.js" type="module"></script>
+</body>
+
+</html>

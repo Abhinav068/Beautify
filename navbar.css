@@ -1,0 +1,155 @@
+body{
+    height: 100vh;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+#head{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:center;
+    background-image: url(/top_nav_banner.png);
+}
+nav{
+    position: fixed;
+    background-color: white;
+    z-index: 4;
+    width: 100%;
+    top: 0px;
+}
+#body{
+    margin-top:10%;
+}
+
+#beauty{
+    animation: slide 3s infinite;
+    margin: auto;
+}
+@keyframes slide{
+    0%{transform: translateY(10px);opacity: 1;}   
+   5%,50%{transform: translateY(3px);opacity: 1;}
+   51%{transform: translateY(-10px);opacity: 0;}
+   52%,100%{transform: translateY(10px);opacity: 0;}
+   }
+
+.icons{
+    width: 40%;
+    display: flex;
+    margin-left: 15%;
+    margin-right: 10px;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.category{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#signin{
+    background-color: #FC2779;
+    border: none;
+    padding:10px 15px 10px 15px;
+    border-radius: 5px;
+    color: white;
+}
+#nykaa_search{
+    display: flex;
+    background-color:  #f4f4f4;
+     align-items: center;
+     border-radius: 5px;
+     width: 250px;
+     height: 40px;
+     justify-content: space-evenly;
+}
+#nykaa_search input{
+    outline: none;
+}
+.drop_Makeup ul{
+    list-style: none;
+}
+.drop_Makeup ul li a{
+    text-decoration: none;
+    color:gray;
+}
+.drop_Makeup ul li a:hover{
+    cursor: pointer;
+}
+.drop_Makeup{
+    position: static;
+}
+.dropdown_cat{
+    width: 100%;
+    margin: auto;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    /* position: absolute;
+    top: 20%; */
+}
+.dropdown_cat ul{
+    display :flex;
+    width: 90%;
+    height:50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sub_menu{
+  display: none;
+}
+.drop_Makeup>ul>li:hover .sub_menu{
+    display: grid;
+    grid-template-columns: repeat(6,0.8fr);
+    position: absolute;
+    z-index: 10;
+    left: 7%;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.sub_menu ul li a{
+    line-height: 25px;
+}
+.sub_menu ul li a:hover,.sub_menu ul li a b:hover{
+    color: orangered;
+}
+.drop_Makeup>ul>li:hover .sub_menu ul{
+    display: block;
+    padding: 20px;
+    background-color:white;
+    height: auto;
+}
+
+.drop_Makeup>ul>li:hover .sub_menu ul:nth-child(2n){
+    background-color: #f4f4f4;;
+}
+#signin:hover{
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------Responsive------------------------------------------------------------- */
+@media screen and (max-width:1080px){
+    #head{
+       display: none;
+    }
+    .category{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    #body{
+        margin-top: 1%;
+    }
+    nav{
+        position: static;
+    }
+    .drop_Makeup>ul>li:hover .sub_menu{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+#logo{
+    font-family: 'Dancing Script', cursive;
+    color: #FC2779;
+    font-size: 25px;
+    font-weight: bold;
+}
