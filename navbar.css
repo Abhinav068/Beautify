@@ -66,6 +66,9 @@ nav{
      height: 40px;
      justify-content: space-evenly;
 }
+#nykaa_search input{
+    outline: none;
+}
 .drop_Makeup ul{
     list-style: none;
 }
@@ -143,4 +146,10 @@ nav{
     .drop_Makeup>ul>li:hover .sub_menu{
         grid-template-columns: repeat(3,1fr);
     }
+}
+#logo{
+    font-family: 'Dancing Script', cursive;
+    color: #FC2779;
+    font-size: 25px;
+    font-weight: bold;
 }
