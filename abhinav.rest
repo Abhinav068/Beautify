@@ -1,8 +1,8 @@
 
-DELETE  https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/
+GET   https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/21
 
 ###
-GET https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/3
+POST https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/
 Content-Type: application/json
 
 {
@@ -10,5 +10,17 @@ Content-Type: application/json
   "image":[1,2,3]
 }
 
+###
+PUT https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/61
+Content-Type: application/json
+
+{
+  "name":"aman kutta",
+  "image":[1,2,3,6],
+  "hobbies":"freefire"
+}
+
+###
+DELETE https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/61
 ###
 https://63985bc3044fa481d69a6daf.mockapi.io/Lipstic

@@ -73,6 +73,19 @@
             padding: 10px;
             cursor: pointer;
         }
+
+        .prop_value {
+            margin-left: 30px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #view_data>div:first-child {
+            width: 70%;
+            margin: auto;
+        }
     </style>
 
 
@@ -96,45 +109,20 @@
                 <!-- <div id="add" class='work' data-id=1>Add</div>
                 <div id="update" class='work' data-id=2>Update </div>
                 <div id="delete" class='work' data-id=3>Delete </div>-->
-            </div> 
+            </div>
             <div id="form_div"></div>
         </div>
 
         <div id="right">
-            <div id="data_form">
-                <h2>Delete Product</h2>
-                <div id="productDetails">
-                    <span>Product id :</span>
-                    <div> <input type="number" placeholder="enter product id"></div>
-                    <span>Enter Category :</span>
-                    <div><select name="cars" id="cars">
-                            <option value=''>Enter Category</option>
-                            <option value="cat1">Lipstick</option>
-                            <option value="cat2">Bosh</option>
-                            <option value="newCat">other</option>
-                        </select>
-                    </div>
-                    <span>Enter Customer Category :</span>
-                    <div> <select id="Customer_type">
-                            <option value="">Enter Customer Type</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <span>Images :</span>
-                    <div><textarea placeholder="enter image url on new line" rows="15" cols="30"></textarea>
-                        <!-- <span style="border: none;">more</span> --></div>
-                    <span>Description: </span>
-                    <div><textarea placeholder="enter description" rows="15" cols="30"></textarea></div>
-                    <span>Price : </span>
-                    <div><input type="number" placeholder="enter price"></div>
-                    <span>Discount and offers: </span>
-                    <div><input type="number" placeholder="offer or discount"></div>
-                    <div id="action-button-div"><button>Submit</button></div>
-                </div>
+            <div id="view_data">
+                <!-- <div><img src="" alt="img1"></div>
+                <div><span class="pro_property">pro_property: </span><br><span class="prop_value"> value </span></div> -->
+
+            </div>
+            <div id="final_submit_div">
+                <!-- <div><button>Add or update or delete</button></div> -->
             </div>
         </div>
     </div>
 </body>
 <script src="admin.js"></script>
-
