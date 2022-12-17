@@ -68,6 +68,7 @@ for (const item of x) {
      for(let item of cart_items){
         item.addEventListener("click",()=>{
          let id = item.dataset.id
+         console.log("hy")
          if(item.innerText == "Added To Bag"){
           item.innerText = "Add To Bag"
           item.style.backgroundColor = "#FC2779";
