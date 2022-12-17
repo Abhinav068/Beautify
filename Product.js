@@ -18,15 +18,10 @@ let fetchData = fetch(Product_url);
 
 fetchData
     .then((res) => res.json())
-
-    
-
-
     .then(data => {
       totalProducts  = data
       renderData(data)}
       )
-// .catch(err=>alert(err));
 
 function renderData(data){
     let newData = data.map((item)=>{
@@ -37,7 +32,7 @@ function renderData(data){
             <p style="text-align:center">Price : ₹${item.price}</p>
             <p style="text-align:center">Rating : ${item.rating}</p>
             <div class="addToCart" data-id= ${item.id}>
-                <p class="heart">&#9825</p>
+                <p class="heart" data-id= ${item.id}>&#9825</p>
                 <p class="add" data-id= ${item.id}>Add To Bag</p>
             </div>
         </div>`     
@@ -46,7 +41,6 @@ function renderData(data){
 
     
 let x = document.querySelectorAll(".title_click");
-
 for (const item of x) {
     item.addEventListener("click",()=>{
         window.location.href = "Prodcut_detail.html";
@@ -58,27 +52,50 @@ for (const item of x) {
     for(let product of products){
       product.addEventListener("click",()=>{
         let id = product.dataset.id
-        localStorage.setItem("product_id",id)
+        localStorage.setItem("product_id",id);
         window.location.href = "Prodcut_detail.html";
       })
     }
     //----------------------------------------------------------------------------------------------------
      //add to bag ----------------------------------------------------------------------------------------
+     let cart_item = JSON.parse(localStorage.getItem("cart_item")) || [];
+
      let cart_items = document.querySelectorAll(".add")
      for(let item of cart_items){
         item.addEventListener("click",()=>{
-         let id = item.dataset.id
-         if(item.innerText == "Added To Bag"){
-          item.innerText = "Add To Bag"
-          item.style.backgroundColor = "#FC2779";
+        let id = item.dataset.id;
+
+        // Add to Cart--------->>>
+
+        for (const product of totalProducts) {
+          if(id == product.id) {
+            let check = false;
+            for(let i = 0; i<cart_item.length; i++) {
+                if(product == cart_item[i]) {
+                    check = true;
+                    break;
+                }
+            }
+            if(check == false) {
+                cart_item.push(product);
+                localStorage.setItem("cart_item",JSON.stringify(cart_item))
+                alert("Item added Successfully");
+            }else {
+                alert("Item already in the Bag");
+            }
           }
-          else{
-            item.innerText = "Added To Bag"
-            item.style.backgroundColor = "brown";
-          }
+        }
+        if(item.innerText == "Added To Bag"){
+        item.innerText = "Add To Bag"
+        item.style.backgroundColor = "#FC2779";
+        }
+        else{
+          item.innerText = "Added To Bag"
+          item.style.backgroundColor = "brown";
+        }
           
-       })
-     }
+      })
+    }
      document.querySelector("#sorting-options").addEventListener("change",(event)=>{
       if(flag){
         sortArray(event.target.value,category_product)
@@ -91,8 +108,42 @@ for (const item of x) {
 
     //--------------------------------------------------------------------------------------------------------
 
+    // Add to wishlist-------->>>
+
+    let wish_item = JSON.parse(localStorage.getItem("wish_item")) || [];
+
+    let wish_items_arr = document.querySelectorAll(".heart");
+
+    for (const item of wish_items_arr) {
+      item.addEventListener("click", ()=>{
+        let id = item.dataset.id;
+
+        for (const product of totalProducts) {
+          if(id == product.id) {
+  
+            let check = false;
+            for(let i = 0; i<wish_item.length; i++) {
+              if(product == wish_item[i]) {
+              check = true;
+              break;
+              }
+            }
+            if(check == false) {
+              wish_item.push(product);
+              localStorage.setItem("wish_item",JSON.stringify(wish_item))
+              alert("Item added Successfully");
+            }else {
+              alert("Item already in the Wishlist");
+            }
+  
+          }
+        }
+      })
+   
+    }
 
   }
+
   //----------------------------------------------------Category----------------------------------------------------------------------
   let categories = document.querySelectorAll("a")
     for(let item of categories){
