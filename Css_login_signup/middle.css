@@ -25,8 +25,12 @@ form>input{
     border-bottom: 1px solid #F469C2;
     font-family: Copperplate, Papyrus, fantasy;
     font-size: 25px;
+    outline: none;
     
 }
+form>input:focus {
+    background-color: #fda9de;
+  }
 
 h1{
     padding: 5%;
@@ -87,6 +91,9 @@ form{
     display: inline;
     font-family: Copperplate, Papyrus, fantasy;
 }
+
+
+
 
 @media all and (min-width: 600px) and (max-width: 1024){
 

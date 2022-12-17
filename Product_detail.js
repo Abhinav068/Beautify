@@ -16,10 +16,12 @@ fetch(Product_url).then(data => (data.json())).then(res => {
     for (const item of res) {
         if (id == item.id) {
             dislpay(item);
-            console.log(item);
         }
     }
 });
+
+let cart_item = JSON.parse(localStorage.getItem("cart_item")) || [];
+let wish_item = JSON.parse(localStorage.getItem("wish_item")) || [];
 
 function dislpay(item) {
     let div = document.createElement("div");
@@ -52,11 +54,54 @@ function dislpay(item) {
     let cart_btn = document.createElement("button");
     cart_btn.innerText = "Add to Bag";
 
+    cart_btn.addEventListener("click",()=>{
+        cart_btn.style.backgroundColor = "green";
+        let check = false;
+        for(let i = 0; i<cart_item.length; i++) {
+            if(item == cart_item[i]) {
+                check = true;
+                break;
+            }
+        }
+        if(check == false) {
+            cart_item.push(item);
+            localStorage.setItem("cart_item",JSON.stringify(cart_item))
+            alert("Item added Successfully");
+        }else {
+            alert("Item already in the Bag");
+        }
+    })
+
     let buy_btn = document.createElement("button");
     buy_btn.innerText = "Buy Now";
 
-    button_box.append(cart_btn,buy_btn);
+    let wishlist_btn = document.createElement("button");
+    
+    wishlist_btn.innerText = "Add to Wishlist";
+
+    wishlist_btn.addEventListener("click",()=>{
+        wishlist_btn.style.backgroundColor = "green";
+        let check = false;
+        for(let i = 0; i<wish_item.length; i++) {
+            if(item == wish_item[i]) {
+                check = true;
+                break;
+            }
+        }
+        if(check == false) {
+            wish_item.push(item);
+            localStorage.setItem("wish_item",JSON.stringify(wish_item))
+            alert("Item added Successfully");
+        }else {
+            alert("Item already in the Wishlist");
+        }
+    })
+
+    button_box.append(cart_btn,buy_btn,wishlist_btn);
     document.querySelector("#card2-top").append(title,Price,rating,category,descript,button_box);
 }
 
 
+document.querySelector("#signin").addEventListener("click",function log(){
+    window.location.href = "login.html"
+  })
