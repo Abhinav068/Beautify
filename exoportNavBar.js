@@ -19,7 +19,7 @@ export const navbar =()=>{
         </div>
         <div class="nav_category">
             <div class="category">
-                <p><span><a href="index.html"><img src="logo.png" width="100px" height="30px"></a></span></p>
+                <p><span><a href="index.html" style="text-decoration: none;" id= "logo">Beautify</a></span></p>
                 <p>Categories</p>
                 <p>Brand</p>
                 <p>Luxe</p>

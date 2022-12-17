@@ -1,23 +1,27 @@
+body{
+  overflow-x: hidden;
+  background-color: rgb(246, 243, 243);
+  font-family: 'Roboto', sans-serif;
+}
 #middle {
+  overflow-y: hidden;
   overflow-x: hidden;
   font-family: "Abel", sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-
 }
 
 #middle {
-
   text-align: center;
-  width: 85%;
+  width: 95%;
   margin: auto;
 }
 
 #middle h1 {
-  background-image: linear-gradient(rgb(242, 127, 127),pink);
-
+  /* background-image: linear-gradient(rgb(242, 127, 127),pink); */
+  background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4);
   font-size: 25px;
   margin-right: 80%;
   margin-top: 10px;
@@ -37,7 +41,7 @@
 /* //slider// */
 
 #section1 {
-  background-color: #fff;
+  background-color: rgb(246, 243, 243);
   padding-top: 60px;
   width: 100%;
   margin: 0 auto;
@@ -50,17 +54,16 @@
 }
 #container {
   display: block;
-  width: 100%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   margin-bottom: 10px;
+  justify-content: center;
 }
 .btn {
   background-color: rgba(8, 161, 238, 0);
   border: none;
   text-shadow: 3px 4px 15px rgb(28, 151, 240);
   font-style: italic;
-
   font-size: 2rem;
   cursor: pointer;
   position: relative;
@@ -80,14 +83,15 @@
 
 #image {
   border-radius: 15px;
+  align-items: center;
 }
 
 #container {
-  margin: 0 10px;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+  /* margin: 0 10px;  */
+  margin: auto;
   transition: 20s;
+  background-color: rgb(246, 243, 243);
 }
-
 #container:hover {
   transform: scale(1.2);
   z-index: 2;
@@ -100,14 +104,14 @@
   margin: auto;
   padding: 40px;
   display: flex;
-  gap: 70px;
-  /* border: 1px solid black; */
+  gap: 30px;
   justify-content: center;
+  background-color: rgb(246, 243, 243);
 }
 
 .image1 {
   /* width: 250px; */
-  margin: 0 10px;
+  margin: auto;
   /* box-shadow: 0 0 20px 2px rgba(0,0,0,.1); */
   transition: 1s;
 }
@@ -487,4 +491,7 @@ body::-webkit-scrollbar-thumb {
   font-family: consolas;
   bottom: -80px;
   letter-spacing: 0.1;
+}
+img{
+  border-radius: 10px;
 }

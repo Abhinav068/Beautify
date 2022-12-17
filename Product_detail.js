@@ -60,3 +60,6 @@ function dislpay(item) {
 }
 
 
+document.querySelector("#signin").addEventListener("click",function log(){
+    window.location.href = "login.html"
+  })
