@@ -101,8 +101,9 @@ for (const item of x) {
           item.innerText = "Added To Bag"
           item.style.backgroundColor = "brown";
         }
-          
+      } 
       })
+      
     }
      document.querySelector("#sorting-options").addEventListener("change",(event)=>{
       if(flag){
