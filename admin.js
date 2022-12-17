@@ -4,10 +4,23 @@ let welcome = document.getElementById('Login');
 let loginButton = document.getElementById('login-button');
 let loginTry = 0;
 let category = ['A', 'B', 'C', 'alpha', 'beta'];
-let p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_price_ele, p_discount_ele;
+let p_id_ele, p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_price_ele, p_discount_ele;
 let pro_id;
 let loadObject = {};
-let tempObj = {};
+let tempObj = {
+    "name": "Maybelline New York Fit Me Mono Blush - 20 Hopeful",
+    "image": [
+        "https://images-static.nykaa.com/media/catalog/product/2/7/2734e50MAYBE00000411.jpg",
+        "https://images-static.nykaa.com/media/catalog/product/2/7/2734e50MAYBE00000411_1.jpg",
+        "https://images-static.nykaa.com/media/catalog/product/2/7/2734e50MAYBE00000411_2.jpg",
+        "https://images-static.nykaa.com/media/catalog/product/2/7/2734e50MAYBE00000411_4.jpg"
+    ],
+    "des": "Explore the entire range of Blush available on Nykaa. Shop more Maybelline New York products here.You can browse through the complete world of Maybelline New York Blush.Alternatively, you can also find many more products from the Maybelline New York Fit Me Mono Blush range.",
+    "rating": 4.8,
+    "price": 193,
+    "category": "Blush",
+    "id": "3"
+};
 
 checkLogIn()
 function checkLogIn() {
@@ -53,6 +66,7 @@ function startWork() {
     `
     document.querySelectorAll('.work').forEach(el => {
         el.addEventListener('click', (e) => {
+            
             console.log(e.target.dataset.id)
             let dowork = e.target.dataset.id;
             if (dowork == 1) { renderTemplate(1) }
@@ -77,15 +91,15 @@ function renderTemplate(value) {
     p_price_ele = document.getElementById('price');
     p_discount_ele = document.getElementById('discount');
     document.getElementById('action-btn').addEventListener('click', () => {
-        let check_entries=[p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_price_ele, p_discount_ele].filter(el=>!el.value.trim());
+        let check_entries = [p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_price_ele, p_discount_ele].filter(el => !el.value.trim());
         //load data in loadObject;
-        if(!check_entries.length){
-        dataLoading();
-        // render on the right side for confirmation (ie, give a parameter to final action button)
-        if (value == 1) render_to_confirm(1)
-        else render_to_confirm(2)
+        if (!check_entries.length) {
+            dataLoading();
+            // render on the right side for confirmation (ie, give a parameter to final action button)
+            if (value == 1) render_to_confirm(1)
+            else render_to_confirm(2)
         }
-        else{
+        else {
             alert('fill all entries')
         }
         //do POST request
@@ -112,44 +126,120 @@ function getProductID(value) {
        <div id="action-button-div"><button id='submit-id'>Submit</button></div>
         </div>
     </div>`
-    document.getElementById('submit-id').addEventListener('click', () => {
+    document.getElementById('submit-id').addEventListener('click', async () => {
         pro_id = +document.getElementById('proId').value;
-        //fetch data 
-        console.log('data is fetched')
-        value == 2 ? (renderTemplate(value), unloading_to_form()) : render_to_confirm(3);
+        //fetch data and render it
+        if (pro_id) {
+            let res;
+            try {
+                res = await fetch(`https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/${pro_id}`);
+            }
+            catch (err) { alert('err is:',err) };
+
+            console.log(res);
+            tempObj = res.ok ? await res.json() || alert('no data found') : console.log('kuchh to gadbad hai')
+            res.ok && tempObj ? (value == 2 ? (renderTemplate(value), unloading_to_form(tempObj), renderObjectData(tempObj)) : render_to_confirm(3)) : alert('something went wrong');
+
+        } else {
+            alert('provide id please')
+        }; /* fetchData(pro_id) */
+
+
+
     })
 }
 
 function dataLoading() {
-    // p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_discount_ele;
+    // p_name_ele, p_catg_ele, p_customer_ele, p_imgUrl_ele, p_desc_ele, p_discount_ele,p_price_ele;
     loadObject.name = p_name_ele.value;
     loadObject.image = p_imgUrl_ele.value.trim().split('\n').filter(el => (el !== '')).map(el => el.trim());
     loadObject.des = p_desc_ele.value;
     loadObject.price = p_price_ele.value;
     loadObject.category = p_catg_ele.value;
+    loadObject.customer_category = p_customer_ele.value;
     loadObject.discount = +p_discount_ele.value;
 
     console.log(loadObject);
 }
 
-function fetchData(id) {
-    //fetching and saving to some temporary variable say 'tempObj'
-    //unload to the form
-    console.log('data is getting fetched');
-}
-
-function unloading_to_form() {
-    console.log('data is unloading to form');
-}
 
 function render_to_confirm(value) {
-    value == 1 ? console.log('data with add_button') : value == 2 ? console.log('data with update_button') : console.log('data with delete_button');
+    value == 3 ? renderObjectData(tempObj) : renderObjectData(loadObject);
+    let submitDiv = document.getElementById('final_submit_div');
+    submitDiv.innerHTML = value == 1 ? `<div><button id='final_submit_btn'>Add</button></div>` : (value == 2 ? `<div><button id='final_submit_btn'>Update</button></div>` : `<div><button id='final_submit_btn'>Delete</button></div>`)
+    console.log('yaha tak?', value)
+    document.getElementById('final_submit_btn').addEventListener('click', () => {
+        value == 1 ? postRequest(loadObject) : value == 2 ? putRequest(loadObject) : deletePost();
+    })
 }
+
+async function postRequest(obj) {
+    res = await fetch(`https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/`,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(obj)
+    });
+
+    console.log(await res.json())
+    //post data to server
+    // check if correctly posted and alert the same
+    // reload the window
+}
+
+async function putRequest(obj) {
+    res = await fetch(`https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/${pro_id}`,{
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(obj)
+    });
+
+    console.log(await res.json())
+    //post data to server
+    // check if correctly posted and alert the same
+    // reload the window
+}
+async function deletePost(){
+    res = await fetch(`https://636b3a947f47ef51e12abb5f.mockapi.io/product_data/${pro_id}`,{
+        method:'DELETE'       
+    });
+
+    console.log(await res.json())
+}
+
+
+function renderObjectData(obj) {
+    function properName(str) {
+        return str.trim().split('').map((a, b) => b == 0 ? a.toUpperCase() : a).join('');
+    }
+    let tempArr = [];
+    let count = 7;
+    for (let i in obj) {
+        let tempobj = {};
+        if (i == 'id') { tempobj.proId = 1; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else if (i == 'name') { tempobj.proId = 2; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else if (i == 'category') { tempobj.proId = 3; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else if (i == 'customer_category') { tempobj.proId = 4; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else if (i == 'des') { tempobj.proId = 5; tempobj.id_name = properName(i) + 'cription'; tempobj.id_value = obj[i]; count++; }
+        else if (i == 'price') { tempobj.proId = 6; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else if (i == 'discount') { tempobj.proId = 7; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        else { tempobj.proId = count; tempobj.id_name = properName(i); tempobj.id_value = obj[i]; count++; }
+        tempArr.push(tempobj);
+    }
+    console.log(tempArr);
+    tempArr = tempArr.sort((a, b) => a.proId - b.proId);
+    document.getElementById('view_data').innerHTML = `
+    <div><img src="${obj.image[0]}" alt="img1"></div>
+    ${tempArr.map(el => {
+        return el.id_name !== "Image" ? `<div><span class="pro_property">${el.id_name}: </span><br><div class="prop_value"> ${el.id_value} </div></div><br>` : ``;
+    }).join('')
+        }`;
+}
+
 function template(work) {
     return (work == 1 || work == 2) && `<div id="data_form">
                 ${work == 1 ? `<h2>Add Products</h2>` : `<h2>Update Product</h2>`}
                 <div id="productDetails">
-                ${work == 2 ? `<div> Product id: ${pro_id}</div>` : ``}
+                ${work == 2 ? `<div> Product id: ${pro_id ? pro_id : ``} </div>` : ``}
                     <span>Product Name :</span>
                     <div> <input type="text" class="u-full-width" id='p_name' placeholder="enter product name"></div>
                     <span>Enter Category :</span>
@@ -187,3 +277,13 @@ function template(work) {
     //     </div>`
 }
 
+function unloading_to_form(obj) {
+    console.log('data is unloading to form');
+    // p_id_ele.value=obj.id; 
+    p_name_ele.value = obj.name;
+    p_imgUrl_ele.value = obj.image.join('\n\n');
+    p_desc_ele.value = obj.des;
+    p_price_ele.value = obj.price;
+    p_catg_ele.value = obj.category;
+    p_discount_ele.value = obj.discount;
+}
