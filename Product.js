@@ -63,8 +63,16 @@ for (const item of x) {
       cart_items = document.querySelectorAll(".add")
      for(let item of cart_items){
         item.addEventListener("click",()=>{
-        let id = item.dataset.id;
 
+         let id = item.dataset.id
+         if(item.innerText == "Added To Bag"){
+          item.innerText = "Add To Bag"
+          item.style.backgroundColor = "#FC2779";
+          }
+          else{
+            item.innerText = "Added To Bag"
+            item.style.backgroundColor = "brown";
+ 
         // Add to Cart--------->>>
 
         for (const product of totalProducts) {
