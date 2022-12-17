@@ -165,6 +165,10 @@ body {
     padding: 10px;
     color: white;
  }
+ .add:hover{
+    background-color: #fb5394;
+    
+ }
  .slide{
     cursor: pointer;
  }
