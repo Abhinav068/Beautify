@@ -3,6 +3,7 @@ import { footer } from "./footer.js";
 document.querySelector("nav").innerHTML = navbar()
 document.getElementById("drop").innerHTML = dropmenu()
 document.getElementById("bottom-footer").innerHTML = footer()
+let cart_items 
 let totalProducts
 let category_product 
 let flag = false
@@ -85,33 +86,39 @@ for (let item of categories) {
 function render(data) {
   let newData = data.map((item) => {
     return `  <div class = "cart_product" data-id= ${item.id}>
-              <p style="color: #FC2779">FEATURED</p>
-              <img src="${item.image[0]}" alt=""height="250px" class = "info" data-id= ${item.id}>
-              <p style="text-align:center">${item.name}</p>
-              <p style="text-align:center">₹${item.price}</p>
-              <p style="text-align:center">${item.rating}</p>
-              <div class="addToCart" data-id= ${item.id}>
-                  <p class="heart">&#9825</p>
-                  <p class="add" data-id = ${item.id}>Add To Bag</p>
-              </div>
-          </div>
-              `
+    <p style="color: #FC2779">FEATURED</p>
+    <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
+    <p class="title_click"; style="text-align:center";>${item.name}</p>
+    <p style="text-align:center">Price : ₹${item.price}</p>
+    <p style="text-align:center">Rating : ${item.rating}</p>
+    <div class="addToCart" data-id= ${item.id}>
+        <p class="heart">&#9825</p>
+        <p class="add" data-id= ${item.id}>Add To Bag</p>
+    </div>
+</div>`     
   })
   document.getElementById("product-cards").innerHTML = newData.join(" ")
-  //For rendering image and description of product------------------------------------------------------
-  let products = document.querySelectorAll(".info")
-  for (let product of products) {
-    product.addEventListener("click", () => {
-      let id = product.dataset.id
-      localStorage.setItem("product_id", id)
-      window.location.href = "#"   //add images link
-    })
+  let x = document.querySelectorAll(".title_click");
+
+  for (const item of x) {
+      item.addEventListener("click",()=>{
+          window.location.href = "Prodcut_detail.html";
+      })
   }
-  //----------------------------------------------------------------------------------------------------------
+  
+      //For rendering image and description of product------------------------------------------------------
+      let products = document.querySelectorAll(".info")
+      for(let product of products){
+        product.addEventListener("click",()=>{
+          let id = product.dataset.id
+          localStorage.setItem("product_id",id)
+          window.location.href = "Prodcut_detail.html";
+        })
+      }
 
 
   //add to bag ----------------------------------------------------------------------------------------------
-  let cart_items = document.querySelectorAll(".add")
+  cart_items = document.querySelectorAll(".add")
   for (let item of cart_items) {
     item.addEventListener("click", () => {
       let id = item.dataset.id
@@ -133,10 +140,8 @@ function render(data) {
     else{
       sortArray(event.target.value,totalProducts)
     }
-   
   })
-  console.log(cart_items)
-
+  
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------
@@ -154,36 +159,42 @@ async function showData(category) {
     category_product = newArray
     totalProducts = newArray
     let renderData = newArray.map((item) => {
-      return `  <div class = "cart_product" data-id= ${item.id}>
-              <p style="color: #FC2779">FEATURED</p>
-              <img src="${item.image[0]}" alt=""height="250px" class = "info" data-id= ${item.id}>
-              <p style="text-align:center">${item.name}</p>
-              <p style="text-align:center">₹${item.price}</p>
-              <p style="text-align:center">${item.rating}</p>
-              <div class="addToCart" data-id= ${item.id}>
-                  <p class="heart">&#9825</p>
-                  <p class="add" data-id= ${item.id}>Add To Bag</p>
-              </div>
-          </div>
-              `
+      return  `  <div class = "cart_product" data-id= ${item.id}>
+      <p style="color: #FC2779">FEATURED</p>
+      <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
+      <p class="title_click"; style="text-align:center";>${item.name}</p>
+      <p style="text-align:center">Price : ₹${item.price}</p>
+      <p style="text-align:center">Rating : ${item.rating}</p>
+      <div class="addToCart" data-id= ${item.id}>
+          <p class="heart">&#9825</p>
+          <p class="add" data-id= ${item.id}>Add To Bag</p>
+      </div>
+  </div>`     
     })
     document.getElementById("product-cards").innerHTML = renderData.join(" ")
+    
 
 
-    //For rendering image and description of product------------------------------------------------------
-    let products = document.querySelectorAll(".info")
-    for (let product of products) {
-      product.addEventListener("click", () => {
-        let id = product.dataset.id
-        localStorage.setItem("product_id", id)
-        window.location.href = "#"   //add images link
-      })
+    let x = document.querySelectorAll(".title_click");
+
+    for (const item of x) {
+        item.addEventListener("click",()=>{
+            window.location.href = "Prodcut_detail.html";
+        })
     }
-    //----------------------------------------------------------------------------------------------------------
-
+    
+        //For rendering image and description of product------------------------------------------------------
+        let products = document.querySelectorAll(".info")
+        for(let product of products){
+          product.addEventListener("click",()=>{
+            let id = product.dataset.id
+            localStorage.setItem("product_id",id)
+            window.location.href = "Prodcut_detail.html";
+          })
+        }
     //add to bag ----------------------------------------------------------------------------------------------
 
-    let cart_items = document.querySelectorAll(".add")
+    cart_items = document.querySelectorAll(".add")
     for (let item of cart_items) {
       item.addEventListener("click", () => {
         let id = item.dataset.id
@@ -208,7 +219,7 @@ async function showData(category) {
       }
      
     })
-    console.log(cart_items)
+ 
   } catch (error) {
     alert(error)
   }
@@ -245,10 +256,34 @@ function sortArray(value,data){
     data.sort((a,b)=>b.price - a.price)
     let array  = display(data)
     document.getElementById("product-cards").innerHTML = array.join(" ")
+    
   }
   else{  
     data.sort((a,b)=>a.price - b.price)
     let array  = display(data)
     document.getElementById("product-cards").innerHTML = array.join(" ")
   }
+  cart_items = document.querySelectorAll(".add")
+    for (let item of cart_items) {
+      item.addEventListener("click", () => {
+        let id = item.dataset.id
+        if (item.innerText == "Added To Bag") {
+          item.innerText = "Add To Bag"
+          item.style.backgroundColor = "#FC2779";
+        }
+        else {
+          item.innerText = "Added To Bag"
+          item.style.backgroundColor = "brown";
+        }
+
+      })
+    }
+    let products = document.querySelectorAll(".info")
+    for(let product of products){
+      product.addEventListener("click",()=>{
+        let id = product.dataset.id
+        localStorage.setItem("product_id",id)
+        window.location.href = "Prodcut_detail.html";
+      })
+    }
 }
