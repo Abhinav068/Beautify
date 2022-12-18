@@ -30,7 +30,7 @@
             margin: auto; 
             background-color: rgb(246, 243, 243);
             font-family: 'Roboto', sans-serif;
-            position: relative;
+            /* position: relative; */
         }
 
         body::-webkit-scrollbar {
@@ -56,13 +56,13 @@
             width: 80%;
             margin: auto;
             padding-top: 10px;
-            
         }
 
         #middle-product-flexible>h1 {
             text-align: center;
             font-family: 'Source Code Pro', monospace;
             padding-left: 20%;
+            position: relative;
         }
 
         #cards {
@@ -71,8 +71,9 @@
             gap: 20px;
             padding-bottom: 20px;
             /* border: 1px solid red; */
-
+            
         }
+        
 
         #cards-functionality-buttons {
             width: 30%;
@@ -191,9 +192,6 @@
     <nav></nav>
     <section id="body">
         <section id="drop"></section>
-        <section>
-            <div id="cart_page_layer"></div>
-        </section>
         <section id="middle-product-flexible">
             <div id="top-section">
                 <h1 style="font-size: 30px;">Face Blush Collection</h1>
@@ -213,6 +211,9 @@
                     <div> <img src="https://www.nykaa.com/media/categoryInfo/art_banner_image/blush_buyingguide_banner_pl.jpg" alt=""></div>
                 </div>
             </div>
+            <section>
+                <div id="cart_page_layer"></div>
+            </section>
             <h1 style="font-size: 30px;">All Products</h1>
             <div id="cards">
                 <div id="cards-functionality-buttons">
@@ -321,6 +322,7 @@
             </div>
 
         </section>
+        
         <section id="bottom-footer"></section>
     </section>
 
