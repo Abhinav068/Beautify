@@ -424,3 +424,110 @@ function sortArray(value,data){
 //     }
 
 // }
+
+document.querySelector("#shopping_bag").addEventListener("click",(e)=>{
+  e.preventDefault();
+
+  document.querySelector("#cart_page_layer").innerHTML = `
+
+  <style>
+
+  //   body {
+  //     background-color: rgb(226, 219, 219);
+  //   }
+  //   #middle-product-flexible {
+  //     background-color: rgb(226, 219, 219);
+  // }
+  
+    #cart_page_layer{
+      display: flex;
+      justify-content: end;
+      position : absolute;
+      right : 0px;
+    }
+    
+    #cart_box {
+      width : 500px;
+      position : fixed;
+      top : 22vh;
+      background-color : white;
+      opacity : 90%;
+      display : flex;
+      // border: 2px solid silver;
+      justify-content: space-evenly;
+      flex-direction : column;
+      gap : 5px;
+    }
+
+    .div0{
+      display : flex;
+      gap : 5px;
+      justify-content: space-evenly;
+    }
+
+    .cartProductImage{
+      border: 2px solid silver;
+      border-radius : 5px;
+      width : 30%;
+    }
+    .cartProductImage img{
+      width : 100%;
+    }
+    .cartProductDetail{
+      border: 2px solid silver;
+      border-radius : 5px;
+      width : 65%;
+    }
+
+  </style>
+
+  <div id="cart_box"></div>
+  `
+  let cart_data = JSON.parse(localStorage.getItem("cart_item")) || [];
+    console.log(cart_data);
+    let x = document.querySelector("#cart_box");
+  for (const data of cart_data) {
+
+    
+    // `
+    // <div class="cartProductImage">
+    //   <img src="${data.image[0]}">
+  
+    // </div>
+    // <div class="cartProductDetail">
+    //   <h4> ${data.name}</h4>
+    //   <h5> Price : ${data.price}</h5>
+    //   <h5> Rating : ${data.rating} &#9733;</h5>
+    // </div>
+    // `
+
+    let div0 = document.createElement("div");
+    div0.setAttribute("class","div0");
+
+    let div = document.createElement("div");
+    div.setAttribute("class","cartProductImage");
+
+    let div1 = document.createElement("div");
+    div1.setAttribute("class","cartProductDetail");
+
+    let img = document.createElement("img");
+    img.src = data.image[0];
+
+    let name = document.createElement("h4");
+    name.innerText = data.name;
+
+    let price = document.createElement("h5");
+    price.innerText = "Price : "+data.price;
+
+    let rating = document.createElement("h5");
+    rating.innerText ="Rating : " +data.rating + " ★";
+
+    div.append(img);
+    div1.append(name,price,rating);
+
+    div0.append(div,div1);
+    x.append(div0);
+
+  }
+
+})
