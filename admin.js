@@ -297,3 +297,6 @@ function unloading_to_form(obj) {
     p_catg_ele.value = obj.category;
     p_discount_ele.value = obj.discount;
 }
+document.querySelector("#index-button").addEventListener("click",()=>{
+    window.location.href = "index.html"
+})

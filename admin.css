@@ -95,7 +95,6 @@ body{
    /* align-items: center; */
    /* border: 1px solid black; */
    padding: 50px;
-   height: 35vh;
    box-shadow: 5px 4px 5px 4px rgb(231, 125, 214);
 }
 
@@ -158,6 +157,27 @@ h2{
 
 }
 #login-button:hover {
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+ }
+ #index-button{
+   margin-top: 50px;
+   padding: 10px;
+   background-color: rgb(246, 210, 228);
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
+   font-style: italic;
+   font-size: 20px;
+   color: rgb(250, 91, 117);
+   cursor: pointer;
+   text-shadow: 3px 8px 15px pink;
+   
+   /* transition: 2s; */
+   border:none
+
+}
+#index-button:hover {
    transform: scale(1.2);
    z-index: 2;
    cursor: pointer;
