@@ -55,15 +55,20 @@ async function login(obj) {
                 }
             });
             if (flag == "yes") {
+
+                localStorage.setItem("Status",true)
                 swal({
                     title: "Congratulation!",
                     text: "Login successfully!",
                     icon: "success",
                     button: "ok",
                   }).then(function() {
+
                     window.location.href="index.html"
                     localStorage.setItem("status",true)
+
                 });
+
 
                 
 
