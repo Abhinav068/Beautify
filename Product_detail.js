@@ -81,7 +81,7 @@ function dislpay(item) {
     buy_btn.innerText = "Buy Now";
     buy_btn.addEventListener("click", () => {
         if(status == "true"){
-            window.location.href = "./Credit card payment/payment.html";
+            window.location.href = "./Credit card payment/payment.html.html";
         }
         else{
             alert("Please Login")
