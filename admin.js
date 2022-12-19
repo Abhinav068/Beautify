@@ -169,7 +169,17 @@ function render_to_confirm(value) {
     submitDiv.innerHTML = value == 1 ? `<div><button id='final_submit_btn'>Add</button></div>` : (value == 2 ? `<div><button id='final_submit_btn'>Update</button></div>` : `<div><button id='final_submit_btn'>Delete</button></div>`)
     console.log('yaha tak?', value)
     document.getElementById('final_submit_btn').addEventListener('click', () => {
+        if(value == 1){
+            alert("Data added succesfully")
+        }
+        else if(value == 2){
+            alert("Data updated succesfully")
+        }
+        else if(value == 3){
+            alert("Data deleted succesfully")
+        }
         value == 1 ? postRequest(loadObject) : value == 2 ? putRequest(loadObject) : deletePost();
+        window.location.reload()
     })
 }
 

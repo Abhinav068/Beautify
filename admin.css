@@ -1,196 +1,148 @@
 *{
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    text-align: center;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
+   text-align: center;
+   box-sizing: border-box;
+}
+  
+#productDetails>div {
+   margin: 4px 0 12px;
+}
+
+#productDetails>div>* {
+   width: 100%;
+   height: 30px;
+   border: 1px solid gray;
+   border-radius: 5px;
+}
+
+input {
+   box-sizing: border-box;
+
+}
+
+#productDetails>#action-button-div {
+   width: 40%;
+   /* border: 1px solid rgb(36, 4, 73); */
+   margin: auto;
+
+}
+
+#data_form {
+   border: 1px solid rgb(172, 231, 9);
+   width: fit-content;
+   padding: 20px;
+}
+
+#container {
+   display: flex;
+   /* gap: 10px; */
+   /* flex-direction: column; */
+
+}
+
+#container>div {
+   width: 50%;
+   margin: 0 auto;
+}
+
+
+#success {
+   padding: 20px;
+   width: fit-content;
+   display: flex;
+   justify-content: space-between;
+   /* background-color: rgb(190, 212, 212); */
+
+}
+
+#success>div {
+   font-size: 20px;
+   border: 1px solid gray;
+   border-radius: 3px;
+   margin: 1px;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.prop_value {
+   margin-left: 30px;
+}
+
+img {
+   width: 100%;
+}
+
+#view_data>div:first-child {
+   width: 70%;
+   margin: auto;
 }
 
 body{
-    /* background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4); */
-    /* width: 100%; */
-    /* height: 40%; */
-    background-color: rgb(246, 235, 241);
+   /* background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4); */
+   /* width: 100%; */
+   /* height: 40%; */
+   background-color: rgb(246, 235, 241);
 }
 /* admin login */
 
 #Login{
-    margin: 40px;
-    width: 35%;
-    text-align: center;
-    background-color: white;
-    /* align-items: center; */
-    /* border: 1px solid black; */
-    height: 35vh;
-    box-shadow: 5px 4px 5px 4px rgb(231, 125, 214);
+   margin: 40px;
+   width: 35%;
+   text-align: center;
+   background-color: white;
+   /* align-items: center; */
+   /* border: 1px solid black; */
+   padding: 50px;
+   height: 35vh;
+   box-shadow: 5px 4px 5px 4px rgb(231, 125, 214);
 }
 
- h2{
-    font-size: 30px;
-    color: rgb(239, 70, 98);
-    font-style: bold;
+h2{
+   font-size: 30px;
+   color: rgb(239, 70, 98);
+   font-style: bold;
 
 }
- #admin-id{
-    color: hotpink;
-    font-size: 15px;
-    padding: 10px;
-    margin-top: 20px;
-    box-shadow: 5px 5px 5px  pink;
-    border: none;
-    /* transition: 1s; */
-
- }
- #admin-id:hover {
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-  }
-
- 
-
- #admin-pass{
+#admin-id{
    color: hotpink;
    font-size: 15px;
    padding: 10px;
    margin-top: 20px;
    box-shadow: 5px 5px 5px  pink;
    border: none;
+   /* transition: 1s; */
 
-    
-
+}
+#admin-id:hover {
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
  }
 
- #admin-pass:hover {
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-  }
 
- #login-button{
-    margin-top: 50px;
-    padding: 10px;
-    background-color: rgb(246, 210, 228);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
-    font-style: italic;
-    font-size: 20px;
-    color: rgb(250, 91, 117);
-    cursor: pointer;
-    text-shadow: 3px 8px 15px pink;
-    
-    /* transition: 2s; */
-    border:none
 
+#admin-pass{
+  color: hotpink;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px  pink;
+  border: none;
+
+   
+
+}
+
+#admin-pass:hover {
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
  }
- #login-button:hover {
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-  }
 
-  input:placeholder{
-    color:rgb(240, 16, 53);
-  }
-
-  /* 2page */
-  /* logout */
-
-  #logout-button{
-
-    /* margin-top: 50px; */
-    margin-top: 50px;
-    padding: 10px;
-    background-color: rgb(246, 210, 228);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
-    font-style: italic;
-    font-size: 20px;
-    color: rgb(250, 91, 117);
-    cursor: pointer;
-    text-shadow: 3px 8px 15px pink;
-    
-    /* transition: 2s; */
-    border:none
-
-
-  }
-  #container{}
-
-  #logout-button:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-
-  }
- 
-  #container div div {
-    gap: 20px;
-  }
-
-  
-   /* #container div div div {
-    border: 3px solid rgb(244, 66, 95);
-    padding: 30px;
-
-    border-radius: 40px;
-    color: rgb(107, 163, 228);
-    cursor: pointer;
-    padding: 20px;
-    background-color: #b3e6f7;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(88, 88, 210);
-    font-style: italic;
-    font-size: 30px;
-    color: rgb(0, 60, 255);
-    cursor: pointer;
-    text-shadow: 3px 8px 15px rgb(13, 140, 244);
-    
-    
-    border:none
-
-    
-  } */
-
-
-  #success>*{
-    /* border: 3px solid rgb(244, 66, 95); */
-    /* padding: 20px; */
-
-    /* border-radius: 40px; */
-    cursor: pointer;
-    padding: 10px;
-    background-color: rgb(189, 247, 189);
-    border-radius: 10px;
-    box-shadow: 1px 2px 1px 2px rgb(201, 247, 132);
-    font-style: italic;
-    font-size: 10px;
-    color:green;
-    cursor: pointer;
-    text-shadow: 3px 8px 15px rgb(126, 230, 126);
-    border:1px solid white;
-
-  }
-
-  #success>*:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-
-  }
-
-  
-
-  /* #container div div div:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-  } */
-
- 
-
-  #final_submit_btn{
-   margin-top: 10px;
+#login-button{
+   margin-top: 50px;
    padding: 10px;
    background-color: rgb(246, 210, 228);
    border-radius: 10px;
@@ -202,204 +154,331 @@ body{
    text-shadow: 3px 8px 15px pink;
    
    /* transition: 2s; */
-   border:none;
+   border:none
+
+}
+#login-button:hover {
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+ }
+
+ input:placeholder{
+   color:rgb(240, 16, 53);
+ }
+
+ /* 2page */
+ /* logout */
+
+ #logout-button{
+
+   /* margin-top: 50px; */
+   margin-top: 50px;
+   padding: 10px;
+   background-color: rgb(246, 210, 228);
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
+   font-style: italic;
+   font-size: 20px;
+   color: rgb(250, 91, 117);
+   cursor: pointer;
+   text-shadow: 3px 8px 15px pink;
    
-  }
-
-  #final_submit_btn:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
+   /* transition: 2s; */
+   border:none
 
 
+ }
+ #container{
+  display: flex;
+  width: 90%;
+  margin: auto;
+ }
 
-  }
+ #logout-button:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+
+ }
+
+ #container div div {
+   gap: 20px;
+ }
 
  
+  /* #container div div div {
+   border: 3px solid rgb(244, 66, 95);
+   padding: 30px;
 
-  #submit-id{
-   background-color: hotpink;
-   color: white;
+   border-radius: 40px;
+   color: rgb(107, 163, 228);
+   cursor: pointer;
+   padding: 20px;
+   background-color: #b3e6f7;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 5px rgb(88, 88, 210);
+   font-style: italic;
+   font-size: 30px;
+   color: rgb(0, 60, 255);
+   cursor: pointer;
+   text-shadow: 3px 8px 15px rgb(13, 140, 244);
+   
+   
+   border:none
+
+   
+ } */
+
+
+ #success>*{
+   /* border: 3px solid rgb(244, 66, 95); */
+   /* padding: 20px; */
+
+   /* border-radius: 40px; */
+   cursor: pointer;
+   padding: 10px;
+   background-color: rgb(189, 247, 189);
+   border-radius: 10px;
+   box-shadow: 1px 2px 1px 2px rgb(201, 247, 132);
+   font-style: italic;
    font-size: 10px;
-
-  }
-
-  #proId{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
-   
-
-  }
-
-  #submit-id:hover{
-
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-
-  }
-  #heading{
-    font-size: 25px;
-    color: rgb(248, 61, 154);
-
-  }
- #form_div{
-    box-shadow: 3px 2px 3px rgb(247, 142, 194);
-    border: white;
-    
-    
+   color:green;
+   cursor: pointer;
+   text-shadow: 3px 8px 15px rgb(126, 230, 126);
+   border:1px solid white;
 
  }
 
-  span {
-    font-size: 20px;
+ #success>*:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
 
  }
-
-
- /* right */
-
- #view_data>div>img{
-    width: 75%;
-    border-radius: 10px;
-    cursor:pointer;
-    box-shadow: 3px 2px 3px rgb(247, 142, 194);
-    
- }
-
- #view_data>div>img:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
- }
-
- .pro_property{
-    font-size: 25px;
-     /* text-shadow: 3px 8px 15px rgb(250, 69, 93);  */
-
-
-    color: rgb(240, 16, 128);
- }
-
-
-
- .prop_value{
-    font-size: 20px;
-    color: #0937de;
-    border: 1px solid rgb(247, 80, 108);
-    margin-top: 5px;
-    width: 60%;
- }
-
- .prop_value:hover{
-
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-
- }
-
- #form_div{
-    width: 50%;
-    margin-left: 30px;
- }
-
- #data_form{
-    border: white;
- }
-
-
- #productDetails{
-    color: rgb(210, 6, 108);
-    font-size: 20px;
-    padding: 30px;
- }
-
- #p_name{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
-
- }
-
- #catg{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
-
- }
- #img_url{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
- }
-
- #Customer_type{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
- }
-
- #desc{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
- }
-
- #price{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
- }
-
- #discount{
-    padding: 15px;
-    color: blue;
-    background-color: rgb(247, 168, 207);
-    border: none;
- }
-
- #action-btn{
-    /* padding: 30px; */
-    /* padding-right: 40px; */
-    border-radius: 40px;
-    color: rgb(107, 163, 228);
-    cursor: pointer;
-    /* padding: 20px; */
-    background-color: #b3e6f7;
-    border-radius: 5px;
-    box-shadow: 2px 3px 2px 2px rgb(88, 88, 210);
-    font-style: italic;
-    font-size: 20px;
-    color: rgb(0, 60, 255);
-    cursor: pointer;
-    /* text-shadow: 3px 8px 5px rgb(13, 140, 244); */
-    border:none
-
-    
-
-    
-    
-    
-  }
-  #action-btn:hover{
-    transform: scale(1.2);
-    z-index: 2;
-    cursor: pointer;
-    
-  }
-
-
 
  
+
+ /* #container div div div:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+ } */
+
+
+
+ #final_submit_btn{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(246, 210, 228);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(250, 91, 117);
+  cursor: pointer;
+  text-shadow: 3px 8px 15px pink;
+  
+  /* transition: 2s; */
+  border:none;
+  
+ }
+
+ #final_submit_btn:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+ }
+
+
+
+ #submit-id{
+  background-color: hotpink;
+  color: white;
+  font-size: 10px;
+
+ }
+
+ #proId{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+  
+
+ }
+
+ #submit-id:hover{
+
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+
+ }
+ #heading{
+   font-size: 25px;
+   color: rgb(248, 61, 154);
+
+ }
+#form_div{
+   box-shadow: 3px 2px 3px rgb(247, 142, 194);
+   border: white;
+   
+}
+#right{
+ padding-bottom: 30px;  
+} 
+
+#left div{
+  margin: auto;
+}
+
+ span {
+   font-size: 20px;
+
+}
+
+#view_data{
+  width: 90%;
+  margin: auto;
+}
+
+/* right */
+
+#view_data>div>img{
+   width: 75%;
+   border-radius: 10px;
+   cursor:pointer;
+   box-shadow: 3px 2px 3px rgb(247, 142, 194);
+   
+}
+
+#view_data>div>img:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+}
+
+.pro_property{
+   font-size: 25px;
+    /* text-shadow: 3px 8px 15px rgb(250, 69, 93);  */
+   color: rgb(240, 16, 128);
+   
+}
+#submit-id{
+   margin-top: 10px;
+}
+.prop_value{
+   font-size: 20px;
+   color: #0937de;
+   border: 1px solid rgb(247, 80, 108);
+   margin-top: 5px;
+   width: 60%;
+   margin: auto;
+
+}
+
+.prop_value:hover{
+
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+
+}
+
+#form_div{
+   width: 50%;
+   margin-left: 30px;
+}
+
+#data_form{
+   border: white;
+}
+
+
+#productDetails{
+   color: rgb(210, 6, 108);
+   font-size: 20px;
+   padding: 30px;
+}
+
+#p_name{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+
+}
+
+#catg{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+
+}
+#img_url{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+}
+
+#Customer_type{
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+}
+
+#desc{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+}
+
+#price{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+}
+
+#discount{
+   padding: 15px;
+   color: blue;
+   background-color: rgb(247, 168, 207);
+   border: none;
+}
+
+#action-btn{
+   /* padding: 30px; */
+   /* padding-right: 40px; */
+   border-radius: 40px;
+   color: rgb(107, 163, 228);
+   cursor: pointer;
+   /* padding: 20px; */
+   background-color: #b3e6f7;
+   border-radius: 5px;
+   box-shadow: 2px 3px 2px 2px rgb(88, 88, 210);
+   font-style: italic;
+   font-size: 20px;
+   color: rgb(0, 60, 255);
+   cursor: pointer;
+   /* text-shadow: 3px 8px 5px rgb(13, 140, 244); */
+   border:none;
+   margin-top: 10px;    
+ }
+ #action-btn:hover{
+   transform: scale(1.2);
+   z-index: 2;
+   cursor: pointer;
+   
+ }
+
+
+
+
 
 
 
