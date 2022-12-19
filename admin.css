@@ -202,10 +202,8 @@ body{
    text-shadow: 3px 8px 15px pink;
    
    /* transition: 2s; */
-   border:none
-    
-    
-
+   border:none;
+   
   }
 
   #final_submit_btn:hover{
@@ -222,12 +220,7 @@ body{
   #submit-id{
    background-color: hotpink;
    color: white;
-   padding: 20px;
    font-size: 10px;
-   
-   
-   
-    
 
   }
 
