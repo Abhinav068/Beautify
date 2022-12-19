@@ -64,7 +64,7 @@ async function login(obj) {
                     button: "ok",
                   }).then(function() {
 
-                    window.location.href="index.html"
+                    window.location.href="Prodcut_detail.html"
                     localStorage.setItem("status",true)
 
                 });
