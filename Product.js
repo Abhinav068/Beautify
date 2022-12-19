@@ -72,8 +72,8 @@ function renderData(data) {
     item.addEventListener("click", () => {
       let id = item.dataset.id
       if (item.innerText == "Added To Bag") {
-        item.innerText = "Add To Bag"
-        item.style.backgroundColor = "#FC2779";
+        item.innerText = "Added To Bag"
+        item.style.backgroundColor = "brown";
       }
       else {
         item.innerText = "Added To Bag"
@@ -85,7 +85,7 @@ function renderData(data) {
           if (id == product.id) {
             let check = false;
             for (let i = 0; i < cart_item.length; i++) {
-              if (product == cart_item[i]) {
+              if (product.id == cart_item[i].id) {
                 check = true;
                 break;
               }
@@ -103,14 +103,9 @@ function renderData(data) {
             }
           }
         }
-        if (item.innerText == "Added To Bag") {
-          item.innerText = "Add To Bag"
-          item.style.backgroundColor = "#FC2779";
-        }
-        else {
           item.innerText = "Added To Bag"
           item.style.backgroundColor = "brown";
-        }
+        
       }
     })
   }
@@ -141,7 +136,7 @@ function renderData(data) {
 
           let check = false;
           for (let i = 0; i < wish_item.length; i++) {
-            if (product == wish_item[i]) {
+            if (product.id == wish_item[i].id) {
               check = true;
               break;
             }
@@ -233,7 +228,7 @@ async function showData(category) {
             if (id == product.id) {
               let check = false;
               for (let i = 0; i < cart_item.length; i++) {
-                if (product == cart_item[i]) {
+                if (product.id == cart_item[i].id) {
                   check = true;
                   break;
                 }
@@ -251,14 +246,8 @@ async function showData(category) {
               }
             }
           }
-          if (item.innerText == "Added To Bag") {
-            item.innerText = "Add To Bag"
-            item.style.backgroundColor = "#FC2779";
-          }
-          else {
             item.innerText = "Added To Bag"
             item.style.backgroundColor = "brown";
-          }
         }
       })
     }
@@ -352,6 +341,7 @@ document.querySelector("#signin").addEventListener("click",function log(){
   if(status == "true"){
     localStorage.setItem("status",false)
     document.getElementById("signin").innerText = "Sign in"
+    location.reload()
   }
   else{
     window.location.href = "login.html"
@@ -363,17 +353,16 @@ document.querySelector("#signin").addEventListener("click",function log(){
 function display(array) {
   let update = array.map((item) => {
     return `  <div class = "cart_product" data-id= ${item.id}>
-  <p style="color: #FC2779">FEATURED</p>
-  <img src="${item.image[0]}" alt=""height="250px" class = "info" data-id= ${item.id}>
-  <p style="text-align:center">${item.name}</p>
-  <p style="text-align:center">₹${item.price}</p>
-  <p style="text-align:center">${item.rating}</p>
-  <div class="addToCart" data-id= ${item.id}>
-      <p class="heart">&#9825</p>
-      <p class="add" data-id= ${item.id}>Add To Bag</p>
-  </div>
-</div>
-  `
+    <p style="color: #FC2779">FEATURED</p>
+    <img src="${item.image[0]}" alt=""height="250" class = "info" data-id= ${item.id}>
+    <p class="title_click"; style="text-align:center";>${item.name}</p>
+    <p style="text-align:center">Price : ₹${item.price}</p>
+    <p style="text-align:center">Rating : ${item.rating}</p>
+    <div class="addToCart" data-id= ${item.id}>
+        <p class="heart">&#9825</p>
+        <p class="add" data-id= ${item.id}>Add To Bag</p>
+    </div>
+</div>`
   })
   return update
 }
@@ -418,7 +407,7 @@ function sortArray(value, data) {
           if (id == product.id) {
             let check = false;
             for (let i = 0; i < cart_item.length; i++) {
-              if (product == cart_item[i]) {
+              if (product.id == cart_item[i].id) {
                 check = true;
                 break;
               }
@@ -436,6 +425,8 @@ function sortArray(value, data) {
             }
           }
         }
+        item.innerText = "Added To Bag"
+        item.style.backgroundColor = "brown";
       }
     })
   }
@@ -466,11 +457,9 @@ function sortArray(value, data) {
            } else {
              alert("Item already in the Wishlist");
            }
- 
          }
        }
      })
- 
    }
 }
 
@@ -482,7 +471,9 @@ function cart() {
   document.querySelector("#cart_page_layer").innerHTML = `
 
   <style>
-
+  *{
+    cursor:pointer
+  }
   //   body {
   //     background-color: rgb(226, 219, 219);
   //   }
@@ -502,7 +493,7 @@ function cart() {
     #cart_box {
       width : 450px;
       // position : fixed;
-      position: sticky;
+      // position: sticky;
       top : 22vh;
       background-color : white;
       opacity : 90%;
@@ -526,7 +517,6 @@ function cart() {
       border-color : rgb(239 9 120);
       background-color : white;
       opacity : 90%;
-      position : sticky;
       top : 22vh;
       
     }
@@ -696,7 +686,7 @@ function cart() {
     plus.addEventListener("click", () => {
       count++;
       quantity.innerText = `Quantity : ${count}`;
-
+      cartDom(count)
     })
 
     let minus = document.createElement("button");
@@ -706,6 +696,7 @@ function cart() {
       if (count > 1) {
         count--;
         quantity.innerText = `Quantity : ${count}`;
+        cartDom(count)
       }
     })
 
@@ -715,6 +706,9 @@ function cart() {
     remove.addEventListener("click", () => {
       cart_data.splice(i, 1);
       localStorage.setItem("cart_item", JSON.stringify(cart_data));
+      if(cart_data.length == 0){
+        location.reload()
+      }
       cart();
     })
 
@@ -728,19 +722,27 @@ function cart() {
     x.append(div0);
 
     Bag_price += Number(data.price) * count;
-    
   });
 
-
-  function cartDom() {
-    document.querySelector("#cart_total>h4").innerText = "Total : ₹ " + Bag_price;
+  let total = 0
+  function cartDom(count = 1) {
+    document.querySelector("#cart_total>h4").innerText = "Total : ₹ " + Bag_price * count;
+    total = Bag_price * count
   }
   cartDom();
 
   let btn = document.createElement("button");
   btn.innerText = "Buy Now";
   btn.addEventListener("click", () => {
-    window.location.href = "./Credit card payment/payment.html.html";
+    if(status == "true"){
+      let price = total
+      localStorage.setItem("Price",price)
+      window.location.href = "./Credit card payment/payment.html.html";
+  }
+  else{
+      alert("Please Login")
+      window.location.href = "login.html"
+  }
   })
 
   x.append(btn);
@@ -749,9 +751,7 @@ function cart() {
     e.preventDefault();
     window.location.href = "product.html";
   })
-
 }
-
 document.querySelector("#shopping_bag").addEventListener("click", (e) => {
   e.preventDefault();
   bagStatus = true;

@@ -63,6 +63,17 @@ cursor: pointer;
     font-family: Copperplate, Papyrus, fantasy;
     font-size: 25px;
 }
+#admin{
+    padding: 2% 9%;
+    margin: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #F469C2;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 25px;
+    cursor: pointer;
+}
 #signin{
     margin-bottom: 2%;
 }

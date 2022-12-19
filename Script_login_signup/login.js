@@ -63,9 +63,8 @@ async function login(obj) {
                     icon: "success",
                     button: "ok",
                   }).then(function() {
-
-                    window.location.href="index.html"
-                    localStorage.setItem("status",true)
+                        history.back()
+                        localStorage.setItem("status",true)
 
                 });
 
@@ -85,3 +84,6 @@ async function login(obj) {
 
     }
 }
+document.addEventListener("click",()=>{
+    window.location.href = "admin.html"
+})

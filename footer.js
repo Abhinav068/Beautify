@@ -21,7 +21,7 @@ export const footer = ()=>{
     </div> 
     <div class="sec2">
         <div class="subsec2">
-        <p><span><a href="index.html" style="text-decoration: none;" id= "logo">Beautify</a></span></p>
+        <p ><span><a href="index.html" style="text-decoration: none;" id= "logo1">Beautify</a></span></p>
             <a href=""><p>Who are we?</p></a>
             <a href=""><p>Careers</p></a>
             <a href=""><p>Authenticity</p></a>

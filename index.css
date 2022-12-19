@@ -1,3 +1,6 @@
+*{
+  cursor:pointer
+}
 body{
   overflow-x: hidden;
   background-color: rgb(246, 243, 243);
@@ -435,6 +438,7 @@ body::-webkit-scrollbar-thumb {
   background: #ee699c;
   position: relative;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .secret-container .ring {

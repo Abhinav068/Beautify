@@ -63,7 +63,7 @@ function dislpay(item) {
         cart_btn.style.backgroundColor = "green";
         let check = false;
         for (let i = 0; i < cart_item.length; i++) {
-            if (item == cart_item[i]) {
+            if (item.id == cart_item[i].id) {
                 check = true;
                 break;
             }
@@ -81,6 +81,7 @@ function dislpay(item) {
     buy_btn.innerText = "Buy Now";
     buy_btn.addEventListener("click", () => {
         if(status == "true"){
+            localStorage.setItem("Price",item.price)
             window.location.href = "./Credit card payment/payment.html.html";
         }
         else{
@@ -115,12 +116,11 @@ function dislpay(item) {
     button_box.append(cart_btn, buy_btn, wishlist_btn);
     document.querySelector("#card2-top").append(title, Price, rating, category, descript, button_box);
 }
-
-
 document.querySelector("#signin").addEventListener("click",function log(){
     if(status == "true"){
       localStorage.setItem("status",false)
       document.getElementById("signin").innerText = "Sign in"
+      location.reload()
     }
     else{
       window.location.href = "login.html"

@@ -32,7 +32,7 @@ export const navbar =()=>{
                     </form>
                 </div>
                     <button id="signin">Sign in</a><span></button>
-                    <a href="" style="color: black; margin-left: 40px;"><span class="material-symbols-outlined" id="shopping_bag">shopping_bag</span></a>
+                    <b style="color: black; margin-left: 40px;"><span class="material-symbols-outlined" id="shopping_bag" style = "  cursor: pointer;">shopping_bag</span></b>
             </div>
             <hr>
         </div>

@@ -51,6 +51,10 @@
 
     <form action="">
         <div class="inputBox">
+            <span>Total Price:</span>
+            <p id="price"></p>
+        </div>
+        <div class="inputBox">
             <span>card number</span>
             <input type="text" maxlength="19" class="card-number-input">
         </div>
@@ -160,9 +164,9 @@ form.addEventListener("submit",(event)=>{
 
                
               })
-            //   .then(function() {
-            //     window.location.href = "login.html"
-            // });            
+              .then(function() {
+                window.location.href = "../index.html"
+            });            
     }
 
 
@@ -174,7 +178,8 @@ form.addEventListener("submit",(event)=>{
     console.log("hy")
 })
 
-
+let Total = localStorage.getItem("Price") || 0
+document.getElementById("price").innerText = "₹" +Total
 </script>
 
 
