@@ -47,6 +47,7 @@ async function login(obj) {
             data.forEach(element => {
                  if(element.email == obj.email && element.password ==obj.password){
                     flag= "yes"
+                    localStorage.setItem("username",element.firstname+element.lastname)
                 }else if(element.email == obj.email && element.password !=obj.password){
                     flag1= "no"
                 }else if(element.email != obj.email && element.password ==obj.password){
@@ -60,7 +61,8 @@ async function login(obj) {
                     icon: "success",
                     button: "ok",
                   }).then(function() {
-                    window.location.href="login.html"
+                    window.location.href="index.html"
+                    localStorage.setItem("status",true)
                 });
 
                 

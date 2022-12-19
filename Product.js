@@ -6,7 +6,11 @@ document.getElementById("drop").innerHTML = dropmenu();
 document.getElementById("bottom-footer").innerHTML = footer();
 
 let cart_items
-
+let user = localStorage.getItem("username") || ""
+let status = localStorage.getItem("status")
+if(status == "true"){
+  document.getElementById("signin").innerText = user
+}
 let totalProducts
 let category_product
 let flag = false
@@ -210,6 +214,7 @@ async function showData(category) {
     }
     //----------------------------------------------------------------------------------------------------------
     //add to bag ----------------------------------------------------------------------------------------------
+    let cart_item = JSON.parse(localStorage.getItem("cart_item")) || [];
     cart_items = document.querySelectorAll(".add")
     for (let item of cart_items) {
       item.addEventListener("click", () => {
@@ -221,10 +226,75 @@ async function showData(category) {
         else {
           item.innerText = "Added To Bag"
           item.style.backgroundColor = "brown";
+  
+          // Add to Cart--------->>>
+  
+          for (const product of totalProducts) {
+            if (id == product.id) {
+              let check = false;
+              for (let i = 0; i < cart_item.length; i++) {
+                if (product == cart_item[i]) {
+                  check = true;
+                  break;
+                }
+              }
+              if (check == false) {
+                cart_item.push(product);
+                localStorage.setItem("cart_item", JSON.stringify(cart_item));
+                if (bagStatus == true) {
+                  cart();
+                }
+                alert("Item added Successfully");
+  
+              } else {
+                alert("Item already in the Bag");
+              }
+            }
+          }
+          if (item.innerText == "Added To Bag") {
+            item.innerText = "Add To Bag"
+            item.style.backgroundColor = "#FC2779";
+          }
+          else {
+            item.innerText = "Added To Bag"
+            item.style.backgroundColor = "brown";
+          }
         }
-
       })
     }
+     // Add to wishlist-------->>>
+
+  let wish_item = JSON.parse(localStorage.getItem("wish_item")) || [];
+
+  let wish_items_arr = document.querySelectorAll(".heart");
+
+  for (const item of wish_items_arr) {
+    item.addEventListener("click", () => {
+      let id = item.dataset.id;
+
+      for (const product of totalProducts) {
+        if (id == product.id) {
+
+          let check = false;
+          for (let i = 0; i < wish_item.length; i++) {
+            if (product == wish_item[i]) {
+              check = true;
+              break;
+            }
+          }
+          if (check == false) {
+            wish_item.push(product);
+            localStorage.setItem("wish_item", JSON.stringify(wish_item))
+            alert("Item added Successfully");
+          } else {
+            alert("Item already in the Wishlist");
+          }
+
+        }
+      }
+    })
+
+  }
 
     //--------------------------------------------------------------------------------------------------------
 
@@ -278,8 +348,15 @@ function back() {
 // ---------------------------------Slider---------------------------------------------------------------------------
 
 //--------------------------------------- signin button-------------------------------------------------------------
-document.querySelector("#signin").addEventListener("click", function log() {
-  window.location.href = "login.html"
+document.querySelector("#signin").addEventListener("click",function log(){
+  if(status == "true"){
+    localStorage.setItem("status",false)
+    document.getElementById("signin").innerText = "Sign in"
+  }
+  else{
+    window.location.href = "login.html"
+  }
+ 
 })
 
 //----------------------------------------------Display sorted Array---------------------------------------------------------------------------
@@ -313,6 +390,16 @@ function sortArray(value, data) {
     let array = display(data)
     document.getElementById("product-cards").innerHTML = array.join(" ")
   }
+  
+  let products = document.querySelectorAll(".info")
+  for (let product of products) {
+    product.addEventListener("click", () => {
+      let id = product.dataset.id
+      localStorage.setItem("product_id", id)
+      window.location.href = "Prodcut_detail.html";
+    })
+  }
+  let cart_item = JSON.parse(localStorage.getItem("cart_item")) || [];
   cart_items = document.querySelectorAll(".add")
   for (let item of cart_items) {
     item.addEventListener("click", () => {
@@ -324,111 +411,68 @@ function sortArray(value, data) {
       else {
         item.innerText = "Added To Bag"
         item.style.backgroundColor = "brown";
+
+        // Add to Cart--------->>>
+
+        for (const product of totalProducts) {
+          if (id == product.id) {
+            let check = false;
+            for (let i = 0; i < cart_item.length; i++) {
+              if (product == cart_item[i]) {
+                check = true;
+                break;
+              }
+            }
+            if (check == false) {
+              cart_item.push(product);
+              localStorage.setItem("cart_item", JSON.stringify(cart_item));
+              if (bagStatus == true) {
+                cart();
+              }
+              alert("Item added Successfully");
+
+            } else {
+              alert("Item already in the Bag");
+            }
+          }
+        }
       }
+    })
+  }
+   // Add to wishlist-------->>>
 
-    })
-  }
-  let products = document.querySelectorAll(".info")
-  for (let product of products) {
-    product.addEventListener("click", () => {
-      let id = product.dataset.id
-      localStorage.setItem("product_id", id)
-      window.location.href = "Prodcut_detail.html";
-    })
-  }
+   let wish_item = JSON.parse(localStorage.getItem("wish_item")) || [];
+
+   let wish_items_arr = document.querySelectorAll(".heart");
+ 
+   for (const item of wish_items_arr) {
+     item.addEventListener("click", () => {
+       let id = item.dataset.id;
+ 
+       for (const product of totalProducts) {
+         if (id == product.id) {
+ 
+           let check = false;
+           for (let i = 0; i < wish_item.length; i++) {
+             if (product == wish_item[i]) {
+               check = true;
+               break;
+             }
+           }
+           if (check == false) {
+             wish_item.push(product);
+             localStorage.setItem("wish_item", JSON.stringify(wish_item))
+             alert("Item added Successfully");
+           } else {
+             alert("Item already in the Wishlist");
+           }
+ 
+         }
+       }
+     })
+ 
+   }
 }
-
-// function renderData(data) {
-
-//     for (const item of data) {
-//         let div = document.createElement("div");
-//         let image = document.createElement("img");
-//         image.src = item.image[0];
-
-//         let title = document.createElement("h3");
-//         title.innerText = item.name;
-
-//         let Price = document.createElement("h4");
-//         Price.innerHTML = `<p>Price : ${item.price} ₹</p>`;
-
-//         let rating = document.createElement("h5");
-//         rating.innerHTML = `<p>Rating : ${item.rating}</p>`;
-
-//         let category = document.createElement("h5");
-//         category.innerHTML = `<p>Category : ${item.category}</p>`;
-
-//         let btn_div = document.createElement("div");
-//         btn_div.setAttribute("class", "btn-div");
-//         btn_div.innerHTML = `
-//         <style>
-
-//         .btn-div{
-//             // display:flex;
-//             // justify-content: center;
-//             // align-item : center;
-//             // align-content : flex-end;
-//             // position : relative;
-//             // bottom : 0;
-//             // margin-bottom : 10px;
-//             // border : 1px solid green;
-//         }
-
-//         </style>
-//         `
-
-//         let btn = document.createElement("button");
-//         btn.setAttribute("id","bag-btn")
-//         btn.innerHTML = `
-
-//         Add to Bag
-//         <style>
-//             #bag-btn{
-//                 background-color: RGB(239 9 120);
-//                 padding: 3% 8%;
-//                 font-size: large;
-//                 color: white;
-//                 border-radius: 5px;
-//                 border: none;
-//                 margin: 2%;
-
-//             }
-//             #bag-btn:hover{
-//                 background-color: rgb(252, 90, 168);
-//             }
-//         </style>`
-
-
-//         let like_btn = document.createElement("button");
-//              // \u2661
-//         like_btn.setAttribute("id","like-btn")
-//         like_btn.innerHTML = `
-
-//         &#9825;
-//         <style>
-//         #like-btn{
-//                 background : transparent;
-//                 font-size: 50px;
-//                 color: RGB(239 9 120);
-//                 border-radius: 5px;
-//                 border: none;
-//                 transform:translate(0rem,0.8rem);
-
-//             }
-//         #like-btn:hover{
-//                 color : green;
-//             }
-//         </style>`
-
-
-//         btn_div.append(like_btn, btn)
-
-//         div.append(image, title, Price, rating, category, btn_div);
-//         document.querySelector("#product-cards").append(div);
-
-//     }
-
-// }
-
 
 /*  ---------------------------cart page functionality----------------------- */
 function cart() {
@@ -672,7 +716,6 @@ function cart() {
       cart_data.splice(i, 1);
       localStorage.setItem("cart_item", JSON.stringify(cart_data));
       cart();
-
     })
 
 

@@ -5,6 +5,11 @@ import { footer } from "./footer.js";
 document.querySelector("nav").innerHTML = navbar()
 document.getElementById("drop").innerHTML = dropmenu()
 document.getElementById("bottom-footer").innerHTML = footer()
+let user = localStorage.getItem("username") || ""
+let status = localStorage.getItem("status")
+if(status == "true"){
+  document.getElementById("signin").innerText = user
+}
 let arr = [
   "https://images-static.nykaa.com/uploads/b5e477cd-478c-4f1d-b1a5-c2030c3d0615.jpg?tr=w-1200,cm-pad_resize",
   "https://images-static.nykaa.com/uploads/fe616105-d856-4ef7-9a91-22a68a988094.png?tr=w-1200,cm-pad_resize",
@@ -41,7 +46,14 @@ function slides() {
 setInterval(slides, 1500);
 
 document.querySelector("#signin").addEventListener("click",function log(){
-  window.location.href = "login.html"
+  if(status == "true"){
+    localStorage.setItem("status",false)
+    document.getElementById("signin").innerText = "Sign in"
+  }
+  else{
+    window.location.href = "login.html"
+  }
+ 
 })
 
 let categories = document.querySelectorAll("a")
