@@ -66,6 +66,9 @@ async function login(obj) {
                         history.back()
                         localStorage.setItem("status",true)
 
+
+
+
                 });
 
 
