@@ -7,34 +7,38 @@
 }
 
 body{
-    background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4);
+    /* background: linear-gradient(90deg, #83f8fa, #f19cf2, #43bcf4); */
     /* width: 100%; */
     /* height: 40%; */
+    background-color: rgb(246, 235, 241);
 }
 /* admin login */
 
 #Login{
-    margin: 60px;
-    width: 70%;
+    margin: 40px;
+    width: 35%;
+    text-align: center;
+    background-color: white;
+    /* align-items: center; */
     /* border: 1px solid black; */
-    height: 40vh;
+    height: 35vh;
     box-shadow: 5px 4px 5px 4px rgb(231, 125, 214);
 }
 
  h2{
-    font-size: 60px;
-    color: rgb(249, 16, 55);
-    font-style: italic;
+    font-size: 30px;
+    color: rgb(239, 70, 98);
+    font-style: bold;
 
 }
  #admin-id{
-    color: red;
-    font-size: 30px;
+    color: hotpink;
+    font-size: 15px;
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 5px 5px 5px  rgb(239, 150, 150);
+    box-shadow: 5px 5px 5px  pink;
     border: none;
-    transition: 1s;
+    /* transition: 1s; */
 
  }
  #admin-id:hover {
@@ -46,14 +50,12 @@ body{
  
 
  #admin-pass{
-    color: red;
-    font-size: 30px;
-    padding: 10px;
-    margin-top: 20px;
-    box-shadow: 5px 5px 5px  rgb(239, 150, 150);
-    border: none;
-    cursor: pointer;
-    transition: 1s;
+   color: hotpink;
+   font-size: 15px;
+   padding: 10px;
+   margin-top: 20px;
+   box-shadow: 5px 5px 5px  pink;
+   border: none;
 
     
 
@@ -67,15 +69,15 @@ body{
 
  #login-button{
     margin-top: 50px;
-    padding: 20px;
-    background-color: #d1f7b3;
+    padding: 10px;
+    background-color: rgb(246, 210, 228);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px green;
+    box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
     font-style: italic;
-    font-size: 30px;
-    color: red;
+    font-size: 20px;
+    color: rgb(250, 91, 117);
     cursor: pointer;
-    text-shadow: 3px 8px 15px rgb(28, 240, 35);
+    text-shadow: 3px 8px 15px pink;
     
     /* transition: 2s; */
     border:none
@@ -97,22 +99,23 @@ body{
   #logout-button{
 
     /* margin-top: 50px; */
-    padding: 20px;
-    background-color: #d1f7b3;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: rgb(246, 210, 228);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(53, 244, 53);
+    box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
     font-style: italic;
-    font-size: 30px;
-    color: red;
+    font-size: 20px;
+    color: rgb(250, 91, 117);
     cursor: pointer;
-    text-shadow: 3px 8px 15px rgb(250, 69, 93);
-    margin-top: 40px;
+    text-shadow: 3px 8px 15px pink;
     
-    border:none;
-    transition: 1s;
+    /* transition: 2s; */
+    border:none
 
 
   }
+  #container{}
 
   #logout-button:hover{
     transform: scale(1.2);
@@ -151,22 +154,21 @@ body{
 
 
   #success>*{
-    border: 3px solid rgb(244, 66, 95);
-    padding: 30px;
+    /* border: 3px solid rgb(244, 66, 95); */
+    /* padding: 20px; */
 
-    border-radius: 40px;
-    color: rgb(107, 163, 228);
+    /* border-radius: 40px; */
     cursor: pointer;
-    padding: 20px;
-    background-color: #b3e6f7;
+    padding: 10px;
+    background-color: rgb(189, 247, 189);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(88, 88, 210);
+    box-shadow: 1px 2px 1px 2px rgb(201, 247, 132);
     font-style: italic;
-    font-size: 30px;
-    color: rgb(0, 60, 255);
+    font-size: 10px;
+    color:green;
     cursor: pointer;
-    text-shadow: 3px 8px 15px rgb(13, 140, 244);
-    border:none
+    text-shadow: 3px 8px 15px rgb(126, 230, 126);
+    border:1px solid white;
 
   }
 
@@ -188,22 +190,21 @@ body{
  
 
   #final_submit_btn{
+   margin-top: 10px;
+   padding: 10px;
+   background-color: rgb(246, 210, 228);
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 5px rgb(251, 164, 207);
+   font-style: italic;
+   font-size: 20px;
+   color: rgb(250, 91, 117);
+   cursor: pointer;
+   text-shadow: 3px 8px 15px pink;
+   
+   /* transition: 2s; */
+   border:none
     
-    padding: 15px;
-    background-color: pink;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(249, 129, 189);
-    font-style: italic;
-    font-size: 30px;
-    color: rgb(242, 69, 98);
-    cursor: pointer;
-    /* text-shadow: 3px 8px 15px rgb(250, 69, 93); */
-    margin-top: 40px;
     
-    border:none;
-    
-
-
 
   }
 
@@ -216,14 +217,12 @@ body{
 
   }
 
-  #action-button-div{
-    padding: 20px;
-  }
+ 
 
   #submit-id{
    background-color: hotpink;
    color: white;
-   padding: 30px;
+   padding: 20px;
    font-size: 10px;
    
    
@@ -249,12 +248,15 @@ body{
 
   }
   #heading{
-    font-size: 35px;
+    font-size: 25px;
     color: rgb(248, 61, 154);
 
   }
  #form_div{
-    box-shadow: 5px 5px 5px rgb(244, 58, 151);
+    box-shadow: 3px 2px 3px rgb(247, 142, 194);
+    border: white;
+    
+    
 
  }
 
@@ -267,9 +269,10 @@ body{
  /* right */
 
  #view_data>div>img{
-    width: 65%;
+    width: 75%;
     border-radius: 10px;
     cursor:pointer;
+    box-shadow: 3px 2px 3px rgb(247, 142, 194);
     
  }
 
@@ -281,7 +284,7 @@ body{
 
  .pro_property{
     font-size: 25px;
-     text-shadow: 3px 8px 15px rgb(250, 69, 93); 
+     /* text-shadow: 3px 8px 15px rgb(250, 69, 93);  */
 
 
     color: rgb(240, 16, 128);
@@ -311,7 +314,7 @@ body{
  }
 
  #data_form{
-    border: none;
+    border: white;
  }
 
 
@@ -372,20 +375,20 @@ body{
  }
 
  #action-btn{
-    padding: 30px;
-    padding-right: 40px;
+    /* padding: 30px; */
+    /* padding-right: 40px; */
     border-radius: 40px;
     color: rgb(107, 163, 228);
     cursor: pointer;
     /* padding: 20px; */
     background-color: #b3e6f7;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px 5px rgb(88, 88, 210);
+    box-shadow: 2px 3px 2px 2px rgb(88, 88, 210);
     font-style: italic;
     font-size: 20px;
     color: rgb(0, 60, 255);
     cursor: pointer;
-    text-shadow: 3px 8px 5px rgb(13, 140, 244);
+    /* text-shadow: 3px 8px 5px rgb(13, 140, 244); */
     border:none
 
     
