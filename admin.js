@@ -119,7 +119,7 @@ function DeleteProduct() {
 
 function getProductID(value) {
     document.getElementById('form_div').innerHTML = `<div id="data_form">
-    ${value == 3 ? `<h2>Delete Product</h2>` : ``}
+    ${value == 3 ? `<h2 id="heading">Delete Product</h2>` : ``}
    <div id="productDetails">
        <span>Product id :</span>
        <div> <input type="number" placeholder="enter product id" id='proId'></div>
@@ -237,7 +237,7 @@ function renderObjectData(obj) {
 
 function template(work) {
     return (work == 1 || work == 2) && `<div id="data_form">
-                ${work == 1 ? `<h2>Add Products</h2>` : `<h2>Update Product</h2>`}
+                ${work == 1 ? `<h2 id="heading">Add Products</h2>` : `<h2 id="">Update Product</h2>`}
                 <div id="productDetails">
                 ${work == 2 ? `<div> Product id: ${pro_id ? pro_id : ``} </div>` : ``}
                     <span>Product Name :</span>
