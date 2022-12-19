@@ -87,6 +87,3 @@ async function login(obj) {
 
     }
 }
-document.addEventListener("click",()=>{
-    window.location.href = "admin.html"
-})
