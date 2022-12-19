@@ -3,6 +3,11 @@ import { footer } from "./footer.js";
 document.querySelector("nav").innerHTML = navbar()
 document.getElementById("drop").innerHTML = dropmenu()
 document.getElementById("bottom-footer").innerHTML = footer()
+let user = localStorage.getItem("username") || ""
+let status = localStorage.getItem("status")
+if(status == "true"){
+  document.getElementById("signin").innerText = user
+}
 
 document.querySelector("#Back").addEventListener("click", () => {
     window.location.href = "product.html";
@@ -75,8 +80,14 @@ function dislpay(item) {
     let buy_btn = document.createElement("button");
     buy_btn.innerText = "Buy Now";
     buy_btn.addEventListener("click", () => {
-        window.location.href = "./Credit card payment/payment.html.html";
-
+        if(status == "true"){
+            window.location.href = "./Credit card payment/payment.html";
+        }
+        else{
+            alert("Please Login")
+            window.location.href = "login.html"
+        }
+    
     })
 
     let wishlist_btn = document.createElement("button");
@@ -106,6 +117,13 @@ function dislpay(item) {
 }
 
 
-document.querySelector("#signin").addEventListener("click", function log() {
-    window.location.href = "login.html"
-})
+document.querySelector("#signin").addEventListener("click",function log(){
+    if(status == "true"){
+      localStorage.setItem("status",false)
+      document.getElementById("signin").innerText = "Sign in"
+    }
+    else{
+      window.location.href = "login.html"
+    }
+   
+  })

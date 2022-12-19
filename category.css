@@ -1,7 +1,10 @@
 body {
     margin: auto;
-     background-color: rgb(246, 243, 243);
-     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: auto; 
+    background-color: rgb(246, 243, 243);
+    font-family: 'Roboto', sans-serif;
+     position: relative;
 }
 
 /* ----------------------mid-section-------------------------- */
@@ -13,8 +16,10 @@ body {
 
 #middle-product-flexible>h1 {
     text-align: center;
-   
-} 
+    font-family: 'Source Code Pro', monospace;
+    padding-left: 20%;
+    position: relative;
+}
 
 #cards {
     display: flex;
