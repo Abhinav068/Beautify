@@ -179,7 +179,6 @@ function render_to_confirm(value) {
             alert("Data deleted succesfully")
         }
         value == 1 ? postRequest(loadObject) : value == 2 ? putRequest(loadObject) : deletePost();
-        window.location.reload()
     })
 }
 
