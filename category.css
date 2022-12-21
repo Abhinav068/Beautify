@@ -16,9 +16,9 @@ body {
 
 #middle-product-flexible>h1 {
     text-align: center;
-    font-family: 'Source Code Pro', monospace;
     padding-left: 20%;
-    position: relative;
+    font-family: 'Roboto', sans-serif;
+    position: static;
 }
 
 #cards {
