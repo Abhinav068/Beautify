@@ -103,12 +103,20 @@ form{
     font-family: Copperplate, Papyrus, fantasy;
 }
 
-
-
-
+@media screen and (max-width: 1000px){
+    #login,#register{
+        width: 350px;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 700px){
+    #login,#register{
+        width: 350px;
+        margin: auto;
+    }
+}
+/* 
 @media all and (min-width: 600px) and (max-width: 1024){
-
-
 
     #register,#login{   
     border: 1px solid white;
@@ -198,5 +206,5 @@ form{
 }
 
 @media all and (min-width: 100px) and (max-width: 599){
-    
-}
+
+} */

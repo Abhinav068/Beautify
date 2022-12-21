@@ -62,9 +62,8 @@
             display: grid;
             grid-template-columns: repeat(2,1fr);
             gap: 15px;
-            background-color: #fff;
+            background-color: rgb(246, 243, 243);;
             padding: 3px;
-
         }
         #middle-card>#card1>div img{
             width: 190px;
@@ -83,7 +82,7 @@
             width: 100%;
             /* border: 1px solid; */
             /* height: 350px; */
-            background-color: #fff;
+            background-color: rgb(246, 243, 243);
             padding: 20px;
             /* color: teal; */
         }
@@ -118,6 +117,7 @@
             border-radius: 60%;
             border: 1px solid silver;
         }
+       
 
         #Back {
             padding: 5px 20px;
@@ -146,6 +146,70 @@
         #button_box > button:hover{
             background-color: rgb(249, 69, 156);
         }
+        @media (max-width: 1080px) {
+            #middle-card{
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
+            #card1{
+                width: 100%;
+                margin: auto;
+            }
+            #card1 div{
+                width: 100%;
+                margin: auto;
+            }
+            #card2-bottom{
+                display: none;
+            }
+            #Back{
+                display: none;
+            }
+            #card2{
+                width: 85%;
+                margin: auto;
+            }
+
+            #button_box>:nth-child(1){
+                display: none;
+            }
+            #button_box>:nth-child(3){
+                display: none;
+            }
+           
+        }
+        @media (max-width: 450px) {
+            #middle-card{
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
+            #card2-bottom{
+              display: none;
+            }
+            #middle-card>#card1>div img{
+                width: 130px;
+            }
+            #card1{
+                width: 100%;
+                margin: auto;
+            }
+            #card1 div{
+                width: 100%;
+                margin: auto;
+            }
+            #card2{
+                width: 85%;
+                margin: auto;
+            }
+            #button_box>:nth-child(1){
+                display: none;
+            }
+            #button_box>:nth-child(3){
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -159,7 +223,7 @@
                 <div id="card1"></div>
                 <div id="card2">
                     <div id="card2-top"></div>
-                    <div id="card2-bottom">
+                    <!-- <div id="card2-bottom">
                         <div>
                             <img src="./logo/BEAUTYFY-logo-img.png" alt="logo">
                             100% Genuine Product
@@ -171,7 +235,7 @@
                         <div>
                             Sold By NYKAA E-Retailer
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

@@ -74,3 +74,15 @@ body{
     border-bottom: 1px solid white;
     color: white;
 }
+@media (max-width: 1080px) {
+    #footer{
+        display: none;
+    }
+   
+}
+@media (max-width: 450px) {
+    #footer{
+        display: none;
+    }
+   
+}

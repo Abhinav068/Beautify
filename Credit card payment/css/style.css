@@ -170,3 +170,43 @@
     margin-top: 30px;
     height: 30px;
 }
+@media screen and (max-width: 1000px){
+    .container form{
+        width: 50%;
+        margin: auto;
+    }
+    .container .card-container .front{
+        width:100%;
+        margin: auto;
+    }
+    .container .card-container .back{
+        width:100%;
+        margin: auto;
+    }
+    .container .card-container .front .image img{
+        height: 40px;
+    }
+    
+}
+@media screen and (max-width: 450px){
+    .container form{
+        width: 100%;
+        margin: auto;
+    }
+    .container .card-container .front{
+        width:100%;
+        margin: auto;
+    }
+    .container .card-container .back{
+        width:100%;
+        margin: auto;
+    }
+    .container .card-container .front .image img{
+        height: 40px;
+    }
+    
+    .container form .flexbox{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}

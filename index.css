@@ -110,7 +110,8 @@ body{
   width: 90%;
   margin: auto;
   padding: 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   gap: 30px;
   justify-content: center;
   background-color: rgb(246, 243, 243);
@@ -156,19 +157,7 @@ body{
 #container4 > cards {
   box-shadow: 10px 20px 10px rgb(249, 199, 207);
 }
-@media (max-width: 700px) {
-  #container4 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 399px) {
-  #container4 {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 
 .cards {
   width: 100%;
@@ -213,7 +202,8 @@ body{
 }
 
 .card-top2 {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   gap: 30px;
   cursor: pointer;
 }
@@ -254,6 +244,7 @@ body{
   width: 100%;
   height: 100%;
   cursor: pointer;
+  /* border: 1px solid black; */
 }
 
 .swiper-pagination {
@@ -502,4 +493,119 @@ body::-webkit-scrollbar-thumb {
 }
 img{
   border-radius: 10px;
+}
+
+
+@media (max-width: 1080px) {
+  #middle{
+    width: 100%;
+  }
+  #container4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #container2{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #container2 img{
+   width: 90%;
+  }
+  .card-top2 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .swiper {
+    display: none;
+  }
+  #container7{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-top{
+    display:none;
+    
+  }
+  #section9{
+    display: none;
+  }
+  #section1>h1,#section1>p{
+    display: none;
+  }
+  .image10{
+    width: 50%;
+    margin: auto;
+  }
+  .lastimg{
+    display: none;
+  }
+  #container-blue{
+    display: none;
+  }
+  .image5{
+    width: 80%;
+    margin: auto;
+  }
+  .part2 img{
+    width: 100%;
+  }
+ .cards{
+  width: 80%;
+  margin: auto;
+ }
+
+}
+
+@media (max-width: 450px) {
+  
+  #middle{
+    width: 100%;
+  }
+  #container4 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #container2{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #container2 img{
+    width: 90%;
+   }
+   .card-top2 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+  #container7{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-top{
+    display:none;
+    
+  }
+  #section9{
+    display: none;
+  }
+  #section1>h1,#section1>p{
+    display: none;
+  }
+  .image10{
+    width: 70%;
+    margin: auto;
+  }
+  .lastimg{
+    display: none;
+  }
+  #container-blue{
+    display: none;
+  }
+  .image5{
+    width: 80%;
+    margin: auto;
+  }
+  .cards{
+    width: 80%;
+    margin: auto;
+   }
 }

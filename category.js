@@ -545,6 +545,25 @@ function cart() {
     .removeItem : hover{
       background-color : rgb(249, 52, 147);
     }
+    @media screen and (max-width: 950px){
+      #cart_total>button{
+        width : 15%;
+      }
+      #cart_box {
+        width : 40%;
+      } 
+    }
+    @media screen and (max-width: 700px){
+      #cart_total>button{
+        width : 15%;
+      }
+      #cart_box {
+        width : 100%;
+      }
+      #cart_total{
+        width:300px
+      }
+    }
 
   </style>
 
