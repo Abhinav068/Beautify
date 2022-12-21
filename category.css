@@ -205,9 +205,8 @@ body {
         height: 100px;
     }
     #cards-functionality-buttons {
-        position: sticky;
-        top :5%
-    
+        position: static;
+      
     }
     .cart_product img{
         width: 250px;
@@ -268,9 +267,8 @@ body {
         height: 100px;
     }
     #cards-functionality-buttons {
-        position: sticky;
-        top :5%
-    
+        position: static;
+      
     }
     .cart_product img{
         width: 250px;

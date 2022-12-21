@@ -178,11 +178,11 @@ nav{
     .category>p:nth-child(7){
         display: none;
     }
-    #shopping_bag{
-        display: none;
-    }
+    
     .category{
-        gap: 5px;
+        gap: 0px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
     }
     .drop_Makeup{
         width: 80%;
@@ -214,7 +214,7 @@ nav{
     }
 }
 @media (max-width: 450px) {
-    .drop_Makeup{
+      .drop_Makeup{
         width: 80%;
     }
     .category>p:nth-child(2){
@@ -235,11 +235,13 @@ nav{
     .category>p:nth-child(7){
         display: none;
     }
-    #shopping_bag{
+    /* #shopping_bag{
         display: none;
-    }
+    } */
     .category{
         gap: 0px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
     }
     .drop_Makeup ul>li:nth-child(3){
         display: none;
