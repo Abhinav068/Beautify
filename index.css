@@ -202,8 +202,9 @@ body{
 }
 
 .card-top2 {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(3,1fr);
+  justify-content: center;
   gap: 30px;
   cursor: pointer;
 }
