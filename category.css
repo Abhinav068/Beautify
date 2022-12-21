@@ -193,9 +193,9 @@ body {
     background-color: rgb(254, 146, 187);
 }
 /* -------------------------------------------------------------Responsive------------------------------------------------------------- */
-@media screen and (max-width:1080px){
+@media screen and (max-width: 700px){
     #product-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
     #cards-functionality-buttons {
@@ -219,5 +219,87 @@ body {
     }
     .cart_product p{
         line-height: 15px;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #filtering-menu{
+        display: none;
+    }
+    #sorting-options{
+        width: 300px;
+    }
+    #container{
+        width: 450px;
+        height: 150px;
+    }
+    #container2{
+        width: 300px;
+    }
+    #container2 div{
+        height: 300px;
+    }
+    #container2 img{
+        width: 100px;
+        height:200px;
+    }
+    #container2>div{
+       display: none;
+    }
+}
+@media screen and (max-width: 399px){
+    #product-cards {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    #cards-functionality-buttons {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width: 50%;
+        height: 100px;
+    }
+    #cards-functionality-buttons {
+        position: sticky;
+        top :5%
+    
+    }
+    .cart_product img{
+        width: 250px;
+        height: 200px;
+    }
+    .cart_product{
+        width: 100%;
+        height: 450px;
+    }
+    .cart_product p{
+        line-height: 15px;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #filtering-menu{
+        display: none;
+    }
+    #sorting-options{
+        width: 300px;
+    }
+    #container{
+        width: 300px;
+        height: 100px;
+    }
+    #container2{
+        width: 300px;
+    }
+    #container2 div{
+        height: 300px;
+    }
+    #container2 img{
+        width: 100px;
+        height:200px;
+    }
+    #container2>div{
+       display: none;
     }
 }

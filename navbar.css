@@ -159,3 +159,105 @@ nav{
     font-size: 25px;
     font-weight: bold;
 }
+@media (max-width: 700px) {
+    .category>p:nth-child(2){
+        display: none;
+    }
+    .category>p:nth-child(3){
+        display: none;
+    }
+    .category>p:nth-child(4){
+        display: none;
+    }
+    .category>p:nth-child(5){
+        display: none;
+    }
+    .category>p:nth-child(6){
+        display: none;
+    }
+    .category>p:nth-child(7){
+        display: none;
+    }
+    #shopping_bag{
+        display: none;
+    }
+    .category{
+        gap: 5px;
+    }
+    .drop_Makeup ul>li:nth-child(3){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(4){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(5){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(6){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(7){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(8){
+        display: none;
+    }
+    #nykaa_search{
+        width: 90%;
+        margin-left: 2px;
+    }
+    #signin{
+        padding: 5px;
+    }
+}
+@media (max-width: 399px) {
+    .category>p:nth-child(2){
+        display: none;
+    }
+    .category>p:nth-child(3){
+        display: none;
+    }
+    .category>p:nth-child(4){
+        display: none;
+    }
+    .category>p:nth-child(5){
+        display: none;
+    }
+    .category>p:nth-child(6){
+        display: none;
+    }
+    .category>p:nth-child(7){
+        display: none;
+    }
+    #shopping_bag{
+        display: none;
+    }
+    .category{
+        gap: 0px;
+    }
+    .drop_Makeup ul>li:nth-child(3){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(4){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(5){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(6){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(7){
+        display: none;
+    }
+    .drop_Makeup ul>li:nth-child(8){
+        display: none;
+    }
+    #nykaa_search{
+        display: none;
+    }
+    #signin{
+        padding: 5px;
+    }
+    
+}

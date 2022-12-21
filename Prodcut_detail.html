@@ -146,6 +146,34 @@
         #button_box > button:hover{
             background-color: rgb(249, 69, 156);
         }
+        @media (max-width: 700px) {
+            #middle-card{
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                margin: auto;
+            }
+            #card1{
+                margin: auto
+            }
+            #card2-bottom{
+                display: none;
+            }
+        }
+        @media (max-width: 399px) {
+            #middle-card{
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+            }
+            #card2-bottom{
+              display: none;
+            }
+            #middle-card>#card1>div img{
+                width: 140px;
+            }
+            #card1{
+                margin: auto
+            }
+        }
     </style>
 </head>
 
@@ -159,7 +187,7 @@
                 <div id="card1"></div>
                 <div id="card2">
                     <div id="card2-top"></div>
-                    <div id="card2-bottom">
+                    <!-- <div id="card2-bottom">
                         <div>
                             <img src="./logo/BEAUTYFY-logo-img.png" alt="logo">
                             100% Genuine Product
@@ -171,7 +199,7 @@
                         <div>
                             Sold By NYKAA E-Retailer
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
