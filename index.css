@@ -549,10 +549,15 @@ img{
   .part2 img{
     width: 100%;
   }
+ .cards{
+  width: 80%;
+  margin: auto;
+ }
 
 }
 
 @media (max-width: 450px) {
+  
   #middle{
     width: 100%;
   }
@@ -599,4 +604,8 @@ img{
     width: 80%;
     margin: auto;
   }
+  .cards{
+    width: 80%;
+    margin: auto;
+   }
 }
