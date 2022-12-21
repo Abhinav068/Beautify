@@ -496,7 +496,7 @@ img{
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 1080px) {
   #middle{
     width: 100%;
   }
@@ -552,7 +552,7 @@ img{
 
 }
 
-@media (max-width: 399px) {
+@media (max-width: 450px) {
   #middle{
     width: 100%;
   }
@@ -586,7 +586,7 @@ img{
     display: none;
   }
   .image10{
-    width: 50%;
+    width: 70%;
     margin: auto;
   }
   .lastimg{
