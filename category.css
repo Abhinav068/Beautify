@@ -206,7 +206,7 @@ body {
     }
     #cards-functionality-buttons {
         position: static;
-      
+    
     }
     .cart_product img{
         width: 250px;
@@ -221,11 +221,11 @@ body {
     }
     #cards{
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
-    #filtering-menu{
+    /* #filtering-menu{
         display: none;
-    }
+    } */
     #sorting-options{
         width: 300px;
     }
@@ -255,6 +255,7 @@ body {
         width: 250px;
      }
 }
+
 @media screen and (max-width: 450px){
     #product-cards {
         grid-template-columns: repeat(1, 1fr);
@@ -268,7 +269,6 @@ body {
     }
     #cards-functionality-buttons {
         position: static;
-      
     }
     .cart_product img{
         width: 250px;
@@ -293,7 +293,66 @@ body {
     }
     #container{
         width: 100%;
-        height: 150px;
+        height: 100px;
+    }
+    #container2{
+        width: 300px;
+    }
+    #container2 div{
+        height: 300px;
+    }
+    #container2 img{
+        width: 100px;
+        height:200px;
+    }
+    #container2>div{
+       display: none;
+    }
+    .slide{
+        padding: 5px;
+    }
+    .cart_product{
+        width: 250px;
+     }
+}
+@media  screen and (max-width: 750px) and (min-width: 451px){
+    #product-cards {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    #cards-functionality-buttons {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width: 50%;
+        height: 100px;
+    }
+    #cards-functionality-buttons {
+        position: static;
+    }
+    .cart_product img{
+        width: 250px;
+        height: 200px;
+    }
+    .cart_product{
+        width: 100%;
+        height: 450px;
+    }
+    .cart_product p{
+        line-height: 15px;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* #filtering-menu{
+        display: none;
+    } */
+    #sorting-options{
+        width: 300px;
+    }
+    #container{
+        width: 100%;
+        height: 100px;
     }
     #container2{
         width: 300px;
