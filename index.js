@@ -57,6 +57,7 @@ document.querySelector("#signin").addEventListener("click",function log(){
   }
  
 })
+console.log("hy")
 
 let categories = document.querySelectorAll("a")
 for(let item of categories){
